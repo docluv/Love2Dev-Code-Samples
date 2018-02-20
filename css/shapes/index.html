@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS Demos</title>
+
+    <style>
+        body {
+            padding: 10%;
+        }
+
+        .circle {
+            width: 140px;
+            height: 140px;
+            background: red;
+            -moz-border-radius: 70px;
+            -webkit-border-radius: 70px;
+            border-radius: 70px;
+        }
+
+        .square {
+            width: 140px;
+            height: 140px;
+            background: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <ul>
+            <li>
+                <a href="../../">Home</a>
+            </li>
+            <li>
+                <a href="/">CSS</a>
+            </li>
+            <li>
+                <a href="text-transform/">text-transform</a>
+            </li>
+        </ul>
+    </header>
+
+    <div class="container">
+
+        <div class="example">
+            <div class="circle"></div>
+        </div>
+        <div class="codebox">
+            <pre class="red">.circle { 
+           width: 140px;
+           height: 140px;
+           background: red; 
+           -moz-border-radius: 70px; 
+           -webkit-border-radius: 70px; 
+           border-radius: 70px;
+        }<br>
+        </pre>
+        </div>
+
+        <div class="example">
+            <div class="square"></div>
+        </div>
+        <div class="codebox">
+            <pre class="blue">.square {
+           width: 140px; 
+           height: 140px; 
+           background: blue; 
+        }<br>
+        
+        </pre>
+        </div>
+
+        <div class="example">
+            <div class="oval"></div>
+        </div>
+        <div class="codebox">
+            <pre class="purple">#oval {
+           width: 200px; 
+           height: 100px; 
+           background: purple; 
+           -moz-border-radius: 100px / 50px; 
+           -webkit-border-radius: 100px / 50px; 
+           border-radius: 100px / 50px;
+        }<br>
+        
+        </pre>
+        </div>
+
+        <div class="example">
+            <div class="up-triangle"></div>
+        </div>
+        <div class="codebox">
+            <pre class="green">#up-triangle {
+           width: 0; 
+           height: 0; 
+           border-bottom: 120px solid green; 
+           border-left: 60px solid transparent; 
+           border-right: 60px solid transparent; 
+        }<br>
+        
+        </pre>
+        </div>
+
+        <div class="example">
+            <div class="down-triangle"></div>
+        </div>
+        <div class="codebox">
+            <pre class="pink">#down-triangle { 
+           width: 0; 
+           height: 0;
+           border-top: 80px solid pink;
+           border-left: 60px solid transparent; 
+           border-right: 60px solid transparent; 
+        }<br>
+         
+        </pre>
+        </div>
+
+        <div class="example">
+            <div class="left-triangle"></div>
+        </div>
+        <div class="codebox">
+            <pre class="orange">#left-triangle {
+           width: 0;
+           height: 0;
+           border-right: 100px solid orange;
+           border-top: 50px solid transparent;
+           border-bottom: 50px solid transparent;
+        }<br>
+        
+        </pre>
+        </div>
+
+        <div class="example">
+            <div class="right-triangle"></div>
+        </div>
+        <div class="codebox">
+            <pre class="red">#right-triangle {
+           width: 0;
+           height: 0;
+           border-left: 100px solid red;
+           border-top: 50px solid transparent;
+           border-bottom: 50px solid transparent;
+        }<br>
+        
+        </pre>
+        </div>
+
+        <div class="example">
+            <div class="trapezium"></div>
+        </div>
+        <div class="codebox">
+            <pre class="blue">#trapezium {
+           height: 0; 
+           width: 80px;
+           border-bottom: 80px solid blue;
+           border-left: 40px solid transparent;
+           border-right: 40px solid transparent;
+        }<br>
+        
+        </pre>
+        </div>
+
+        <div class="example">
+            <div class="diamond"></div>
+        </div>
+        <div class="codebox">
+            <pre class="purple">#diamond {
+           width: 80px; 
+           height: 80px; 
+           background: purple;
+           margin: 3px 0 0 30px;
+           /* Rotate */
+           -webkit-transform: rotate(-45deg);
+           -moz-transform: rotate(-45deg);
+           -ms-transform: rotate(-45deg);
+           -o-transform: rotate(-45deg);
+           transform: rotate(-45deg);
+           /* Rotate Origin */
+           -webkit-transform-origin: 0 100%;
+           -moz-transform-origin: 0 100%;
+           -ms-transform-origin: 0 100%;
+           -o-transform-origin: 0 100%;
+           transform-origin: 0 100%;
+        }<br>
+        
+        </pre>
+        </div>
+
+        <div class="example">
+            <div class="rectangle"></div>
+        </div>
+        <div class="codebox">
+            <pre class="green">#rectangle {
+           width: 140px; 
+           height: 80px;
+           background: green;
+        }<br>
+        
+        </pre>
+        </div>
+
+        <div class="example">
+            <div class="parallelogram"></div>
+        </div>
+        <div class="codebox">
+            <pre class="pink">#parallelogram {
+           width: 130px; 
+           height: 75px;
+           background: pink;
+           /* Skew */
+           -webkit-transform: skew(20deg); 
+           -moz-transform: skew(20deg); 
+           -o-transform: skew(20deg);
+           transform: skew(20deg);
+        }<br>
+        
+        </pre>
+        </div>
+
+        <div class="example">
+            <div class="twelve-point-star"></div>
+        </div>
+        <div class="codebox">
+            <pre class="orange">#twelve-point-star {
+           height: 100px;
+           width: 100px;
+           background: orange;
+           position: absolute;
+        }
+        #twelve-point-star:before {
+           height: 100px;
+           width: 100px;
+           background: orange;
+           content:"";
+           position: absolute;
+           /* Rotate */
+           -moz-transform: rotate(30deg);
+           -webkit-transform: rotate(30deg);
+           -ms-transform: rotate(30deg);
+           -o-transform: rotate(30deg);
+           transform: rotate(30deg);
+        }
+        #twelve-point-star:after {
+           height: 100px;
+           width: 100px;
+           background: orange;
+           content:"";
+           position: absolute;
+           /* Rotate */
+           -moz-transform: rotate(-30deg);
+           -webkit-transform: rotate(-30deg);
+           -ms-transform: rotate(-30deg);
+           -o-transform: rotate(-30deg);
+           transform: rotate(-30deg);
+        }<br>
+        
+        </pre>
+        </div>
+
+        <div class="example">
+            <div class="six-point-star"></div>
+        </div>
+        <div class="codebox">
+            <pre class="red">#six-point-star {
+           position: absolute;
+           width: 0; 
+           height: 0; 
+           border-left: 50px solid transparent; 
+           border-right: 50px solid transparent; 
+           border-bottom: 80px solid red;
+        }
+        #six-point-star:after {
+           content:"";
+           position: absolute;
+           width: 0; 
+           height: 0; 
+           border-left: 50px solid transparent; 
+           border-right: 50px solid transparent; 
+           border-top: 80px solid red;
+           margin: 30px 0 0 -50px;
+        }<br>
+        
+        </pre>
+        </div>
+
+        <div class="example">
+            <div class="octagon"></div>
+        </div>
+        <div class="codebox">
+            <pre class="blue">#octagon {
+           width: 100px; 
+           height: 100px; 
+           background: blue;
+        }
+        #octagon:before {
+           height: 0;
+           width: 40px;
+           content:"";
+           position: absolute; 
+           border-bottom: 30px solid blue;
+           border-left: 30px solid white; 
+           border-right: 30px solid white; 
+        }
+        #octagon:after {
+           height: 0;
+           width: 40px;
+           content:"";
+           position: absolute; 
+           border-top: 30px solid blue; 
+           border-left: 30px solid white;  
+           border-right: 30px solid white; 
+           margin: 70px 0 0 0;
+        }<br>
+        
+        </pre>
+        </div>
+
+        <div class="example">
+            <div class="speech-bubble"></div>
+        </div>
+        <div class="codebox">
+            <pre class="purple">#speech-bubble {
+           width: 120px; 
+           height: 80px; 
+           background: purple;
+           position: absolute;
+           -moz-border-radius: 10px; 
+           -webkit-border-radius: 10px; 
+           border-radius: 10px;
+        }
+        #speech-bubble:before {
+           content:"";
+           position: absolute;
+           width: 0;
+           height: 0;
+           border-top: 13px solid transparent;
+           border-right: 26px solid purple;
+           border-bottom: 13px solid transparent;
+           margin: 13px 0 0 -25px;
+        }<br>
+        
+        </pre>
+        </div>
+
+        <div class="example">
+            <div class="easter-egg"></div>
+        </div>
+        <div class="codebox">
+            <pre class="green">#egg {
+           display:block;
+           width:126px; 
+        /* width has to be 70% of height */
+        /* could use width:70%; in a square container */
+           height:180px;
+           background-color:green;
+        
+        /* beware that Safari needs actual
+         px for border radius (bug) */
+           -webkit-border-radius:63px 63px 63px 63px/
+           108px 108px 72px 72px;
+           /* fails in Safari, but overwrites in Chrome */
+           border-radius:50% 50% 50% 50%/60% 60% 40% 40%;
+        }<br>
+        
+        </pre>
+        </div>
+
+        <div class="example">
+            <div class="eq-triangle"></div>
+        </div>
+        <div class="codebox">
+            <pre class="pink">#eq-triangle {
+          width: 0;
+          height: 0;
+          border-bottom: 104px solid navy;
+          /* 104 = 120 * 0.866 */
+          border-left: 60px solid transparent;
+          border-right: 60px solid transparent;
+        }<br>
+        
+        </pre>
+        </div>
+
+        <div class="example">
+            <div class="pacman"></div>
+        </div>
+        <div class="codebox">
+            <pre class="orange">.pacman {
+          width: 0px;
+          height: 0px;
+          border-right: 60px solid transparent;
+          border-top: 60px solid yellow;
+          border-left: 60px solid yellow;
+          border-bottom: 60px solid yellow;
+          border-top-left-radius: 60px;
+          border-top-right-radius: 60px;
+          border-bottom-left-radius: 60px;
+          border-bottom-right-radius: 60px;
+        }<br>
+        
+        </pre>
+        </div>
+
+        <div class="example">
+            <div class="biohazard"></div>
+        </div>
+        <div class="codebox">
+            <pre class="red">.biohazard {
+          width: 0;
+          height: 0;
+          border-bottom: 60px solid black;
+          border-top: 60px solid black;
+          border-left: 60px solid yellow;
+          border-right: 60px solid yellow;
+          -moz-border-radius: 60px; 
+          -webkit-border-radius: 60px; 
+          border-radius: 60px;
+        }<br>
+        </pre>
+        </div>
+
+
+        <div class="example">
+            <div id="heart"></div>
+        </div>
+        <div class="codebox">
+            <pre class="blue">#heart { 
+            position: relative;
+        }
+        #heart:before, #heart:after {
+            position: absolute;
+          content: "";
+            left: 70px; top: 0;
+            width: 70px;
+            height: 115px;
+            background: red;
+            -moz-border-radius: 50px 50px 0 0;
+            border-radius: 50px 50px 0 0;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-transform-origin: 0 100%;
+            -moz-transform-origin: 0 100%;
+            -ms-transform-origin: 0 100%;
+            -o-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+        }
+        #heart:after { 
+            left: 0; 
+            -webkit-transform: rotate(45deg); 
+            -moz-transform: rotate(45deg); 
+            -ms-transform: rotate(45deg); 
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-transform-origin: 100% 100%;
+            -moz-transform-origin: 100% 100%;
+            -ms-transform-origin: 100% 100%;
+            -o-transform-origin: 100% 100%;
+            transform-origin :100% 100%;
+        }<br>
+        </pre>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

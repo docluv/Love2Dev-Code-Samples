@@ -1,0 +1,15 @@
+{
+    "name": "love2dev_web_samples",
+    "version": "0.0.1",
+    "description": "Love2Dev Web Samples",
+    "main": "bin/build.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "http-server -p 17700 -c -i"
+    },
+    "author": "Chris Love",
+    "private": true,
+    "devDependencies": {
+        "http-server": "*"
+    }
+}

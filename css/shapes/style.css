@@ -1,0 +1,342 @@
+
+/* Pre Boxes */
+
+pre {
+    padding: 15px;
+    margin: 10px;
+    font: 13px "Consolas", "Courier New", Courier, mono, serif;
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+}
+
+pre a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+pre a:hover {
+    color: #222;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sub {
+    font-weight: bold;
+}
+
+.red {
+    background: #cb1d1e;
+    color: #fff;
+}
+
+.blue {
+    background: #2d9dcd;
+    color: #fff;
+}
+
+.purple {
+    background: #a434d8;
+    color: #fff;
+}
+
+.green {
+    background: #73bd2c;
+    color: #222;
+}
+
+.pink {
+    background: #e24ebe;
+    color: #fff;
+}
+
+.orange {
+    background: #eda634;
+    color: #222;
+}
+
+.example {
+    float: left;
+    width: 150px;
+    margin: 0 0 10px 0;
+}
+
+.example:hover {
+    opacity: .5;
+    -webkit-transition: opacity .5s ease;
+    -moz-transition: opacity .5s ease;
+    transition: opacity .5s ease;
+    cursor: pointer;
+}
+
+.codebox {
+    float: left;
+    margin: 0 0 0 30px;
+    width: 450px;
+}
+
+.clearer {
+    clear: both;
+}
+
+/* End Pre Boxes */
+
+/* iz can haz shapez */
+
+.rounded-corner {
+    border-radius: 20%;
+    border: 3px solid #c30000;
+  }
+
+.circle {
+    width: 140px;
+    height: 140px;
+    background: #cb1d1e;
+    border-radius: 50%;
+    margin: 15px 0 0 20px;
+}
+
+.square {
+    width: 120px;
+    height: 120px;
+    background: #2d9dcd;
+    margin: 3px 0 0 30px;
+}
+
+.oval {
+    width: 160px;
+    height: 80px;
+    background: #a434d8;
+    border-radius: 50% / 25%;
+    margin: 40px 0 0 10px;
+}
+
+.rotate-30{
+    transform: rotate(30deg);
+}
+
+.up-triangle {
+    width: 0;
+    height: 0;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 120px solid #73bd2c;
+    margin: 20px 0 0 30px;
+}
+
+.down-triangle {
+    width: 0;
+    height: 0;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-top: 120px solid #e24ebe;
+    margin: 20px 0 0 30px;
+}
+
+.left-triangle {
+    width: 0;
+    height: 0;
+    border-top: 60px solid transparent;
+    border-right: 120px solid #eda634;
+    border-bottom: 60px solid transparent;
+    margin: 20px 0 0 30px;
+}
+
+.right-triangle {
+    width: 0;
+    height: 0;
+    border-top: 60px solid transparent;
+    border-left: 120px solid #cb1d1e;
+    border-bottom: 60px solid transparent;
+    margin: 20px 0 0 30px;
+}
+
+.trapezium {
+    height: 0;
+    width: 80px;
+    border-bottom: 80px solid #2d9dcd;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    margin: 30px 0 0 10px;
+}
+
+.diamond {
+    width: 100px;
+    height: 100px;
+    background: #a434d8;
+    margin: 80px 0 0 90px;
+    /* Rotate */
+    transform: rotate(-45deg);
+    /* Rotate Origin */
+    transform-origin: 0 100%;
+}
+
+.rectangle {
+    width: 140px;
+    height: 80px;
+    background: #73bd2c;
+    margin: 20px 0 0 20px;
+}
+
+.parallelogram {
+    width: 130px;
+    height: 75px;
+    background: #e24ebe;
+    transform: skew(20deg);
+    margin: 30px 0 0 25px;
+}
+
+.twelve-point-star,
+.twelve-point-star:before,
+.twelve-point-star:after  {
+    height: 100px;
+    width: 100px;
+    background: #eda634;
+    position: absolute;
+    margin: 40px 0 0 30px;
+}
+
+.twelve-point-star:before {
+    content: "";
+    transform: rotate(30deg);
+}
+
+.twelve-point-star:after {
+    content: "";
+    transform: rotate(-30deg);
+}
+
+.six-point-star,
+.six-point-star:after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 80px solid #cb1d1e;
+    margin: 20px 0 0 30px;
+}
+
+.six-point-star:after {
+    content: "";
+    margin: 30px 0 0 -50px;
+}
+
+.octagon {
+    width: 100px;
+    height: 100px;
+    background: #2d9dcd;
+    margin: 30px 0 0 40px;
+}
+
+.octagon:before,
+.octagon:after {
+    content: "";
+    position: absolute;
+    border-bottom: 30px solid #2d9dcd;
+    border-left: 30px solid #fff;
+    border-right: 30px solid #fff;
+    width: 40px;
+    height: 0;
+}
+
+.octagon:after {
+    border-top: 30px solid #2d9dcd;
+    border-left: 30px solid #fff;
+    border-right: 30px solid #fff;
+    margin: 70px 0 0 0;
+}
+
+.speech-bubble {
+    width: 120px;
+    height: 80px;
+    background: #a434d8;
+    margin: 20px 0 0 30px;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.speech-bubble:before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 13px solid transparent;
+    border-right: 26px solid #a434d8;
+    border-bottom: 13px solid transparent;
+    margin: 13px 0 0 -25px;
+}
+
+.easter-egg {
+    display: block;
+    width: 126px;
+    /* width has to be 70% of height */
+    /* could use width:70%; in a square container */
+    height: 180px;
+    background-color: #73bd2c;
+    border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
+    margin: 20px 0 0 20px;
+}
+
+.eq-triangle {
+    width: 0;
+    height: 0;
+    border-bottom: 104px solid #e24ebe;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    margin: 20px 0 0 30px;
+}
+
+.biohazard {
+    margin: 20px 0 0 20px;
+    width: 0;
+    height: 0;
+    border-bottom: 60px solid black;
+    border-top: 60px solid black;
+    border-left: 60px solid yellow;
+    border-right: 60px solid yellow;
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+    border-radius: 60px;
+}
+
+.pacman {
+    margin: 20px 0 0 20px;
+    width: 0px;
+    height: 0px;
+    border-right: 60px solid transparent;
+    border-top: 60px solid yellow;
+    border-left: 60px solid yellow;
+    border-bottom: 60px solid yellow;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+}
+
+.heart {
+    position: relative;
+    margin: 20px 0 0 20px;
+}
+
+.heart:before,
+.heart:after {
+    position: absolute;
+    content: "";
+    left: 70px;
+    top: 0;
+    width: 70px;
+    height: 115px;
+    background: red;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+

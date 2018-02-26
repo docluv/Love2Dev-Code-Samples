@@ -1,0 +1,133 @@
+`
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS Demos - Centering Elements</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-center {
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .flex-vertical-center {
+            align-items: center;
+        }
+
+        .flex-horizontal-center {
+            justify-content: center;
+        }
+
+        .align-left {
+            text-align: left;
+        }
+
+        .align-right {
+            text-align: right;
+        }
+
+        .align-center {
+            text-align: center;
+        }
+
+        header {
+            width: 100%;
+            min-height: 80px;
+            margin: 5px 0 20px 0;
+            background-color: purple;
+        }
+
+        .navbar {
+            width: 100%;
+
+        }
+
+        .navbar li {
+            list-style-type: none;
+            display: inline-block;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.5em;
+            padding: 3px 5px;
+        }
+
+        .text-example {
+            width: 100%;
+            text-align: center;
+            margin: 10% 0;
+        }
+
+        .image-example {
+            width: 60vw;
+            min-width: 360px;
+            text-align: center;
+            margin: 5% auto;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="flex flex-vertical-center">
+
+        <div class="navbar flex flex-horizontal-center">
+            <ul>
+                <li class="navitem">
+                    <a href="/">Home</a>
+                </li>
+                <li class="navitem">
+                    <a href="/">Products</a>
+                </li>
+                <li class="navitem">
+                    <a href="/">Articles</a>
+                </li>
+                <li class="navitem">
+                    <a href="/">About</a>
+                </li>
+                <li class="navitem">
+                    <a href="/">Contact</a>
+                </li>
+            </ul>
+        </div>
+
+    </header>
+
+    <main class="flex flex-center">
+
+        <div class="text-example">
+            <h1>How to Center</h1>
+            <h2>Anything with HTML & CSS</h2>
+        </div>
+
+
+        <div class="image-example">
+            <img srcset="img/cat-w-shiny-ball-1125x1125.jpg 1125w,img/cat-w-shiny-ball-980x980.jpg 980w,img/cat-w-shiny-ball-720x720.jpg 720w,img/cat-w-shiny-ball-460x460.jpg 460w,img/cat-w-shiny-ball-320x320.jpg 320w"
+                src="img/cat-w-shiny-ball-1125x1125.jpg" sizes="(max-width: 480px) 45vw, 45vw" alt="cat-w-shiny-ball">
+        </div>
+
+    </main>
+
+</body>
+
+</html>

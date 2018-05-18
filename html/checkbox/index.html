@@ -1,0 +1,343 @@
+`
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML Demos - The Checkbox</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-center {
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .flex-vertical-center {
+            align-items: center;
+        }
+
+        .flex-horizontal-center {
+            justify-content: center;
+        }
+
+        .align-left {
+            text-align: left;
+        }
+
+        .align-right {
+            text-align: right;
+        }
+
+        .align-center {
+            text-align: center;
+        }
+
+        header {
+            width: 100%;
+            min-height: 80px;
+            margin: 5px 0 20px 0;
+            background-color: purple;
+        }
+
+        .navbar {
+            width: 100%;
+
+        }
+
+        .navbar li {
+            list-style-type: none;
+            display: inline-block;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.5em;
+            padding: 3px 5px;
+        }
+
+        .form-row {
+            margin: 6px 0;
+            padding: 3px
+        }
+
+        input,
+        label {
+            font-size: 1.2em;
+        }
+
+        fieldset {
+            margin: 2%;
+            background-color: #eee;
+        }
+
+        .child-checkboxes {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="flex flex-center">
+
+        <textarea name="action-log" id="action-log" cols="30" rows="10"></textarea>
+
+        <form>
+            
+            <div class="form-row">
+                <input type="checkbox" id="subscribeNews" name="subscribe" value="newsletter">
+                <label for="subscribeNews">Subscribe to newsletter?</label>
+            </div>
+            <div class="form-row">
+                <button type="submit" id="btnSubmitSubscribe">Subscribe</button>
+            </div>
+
+
+            <div class="form-row">
+                <input type="checkbox" id="renderedChecked" name="subscribe" value="rendered-checked" checked>
+                <label for="renderedChecked">This One Rendered Checked</label>
+            </div>
+            <div class="form-row">
+                <input type="checkbox" id="javascriptChecked" name="subscribe" value="js-checked">
+                <label for="javascriptChecked">This One Checked By JavaScript</label>
+            </div>
+
+            <fieldset>
+                <legend>Choose your interests</legend>
+                <div class="form-row">
+                    <input type="checkbox" id="coding" name="interest" value="coding">
+                    <label for="coding">Coding</label>
+                </div>
+                <div class="form-row">
+                    <input type="checkbox" id="music" name="interest" value="music">
+                    <label for="music">Music</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                    <legend>Pick Your Interests</legend>
+        
+                    <div class="child-checkboxes">
+                        <div class="form-row">
+                            <input type="checkbox" id="jsinterest" name="Interest" value="javascript">
+                            <label for="jsinterest">JavaScript</label>
+                        </div>
+                        <div class="form-row">
+                            <input type="checkbox" id="htmlinterest" name="Interest" value="html">
+                            <label for="htmlinterest">HTML</label>
+                        </div>
+                        <div class="form-row">
+                            <input type="checkbox" id="cssinterest" name="Interest" value="css">
+                            <label for="cssinterest">CSS</label>
+                        </div>
+                        <div class="form-row">
+                            <input type="checkbox" id="pwainterest" name="Interest" value="pwa">
+                            <label for="pwainterest">Progressive Web Apps</label>
+                        </div>
+                        <div class="form-row">
+                            <button type="submit" id="btnInterest">Submit</button>
+                        </div>
+                    </div>
+                </fieldset>
+    
+
+            <fieldset>
+                <legend>Choose At Least Two Interests</legend>
+
+                <div class="form-row">
+                    <input type="checkbox" id="pickInterests" name="pickInterestsParent">
+                    <label for="pickInterests">Select at Least 2 Interests</label>
+                </div>
+
+                <div class="child-checkboxes">
+                    <div class="form-row">
+                        <input type="checkbox" id="jspickinterest" name="pickInterest" value="javascript">
+                        <label for="jspickinterest">JavaScript</label>
+                    </div>
+                    <div class="form-row">
+                        <input type="checkbox" id="htmlpickinterest" name="pickInterest" value="html">
+                        <label for="htmlpickinterest">HTML</label>
+                    </div>
+                    <div class="form-row">
+                        <input type="checkbox" id="csspickinterest" name="pickInterest" value="css">
+                        <label for="csspickinterest">CSS</label>
+                    </div>
+                    <div class="form-row">
+                        <input type="checkbox" id="pwapickinterest" name="pickInterest" value="pwa">
+                        <label for="pwapickinterest">Progressive Web Apps</label>
+                    </div>
+                    <div class="form-row">
+                        <button type="submit" id="btnPickInterest">Submit</button>
+                    </div>
+                </div>
+            </fieldset>
+
+        </form>
+
+    </main>
+
+    <script>
+        var log = document.querySelector("#action-log");
+
+        var jsCheck = document.getElementById("javascriptChecked");
+
+        jsCheck.setAttribute("checked", "checked");
+
+        function addToLog(value) {
+
+            log.value = log.value + '\n' + value;
+
+        }
+
+        var btnSubscribe = document.getElementById("btnSubmitSubscribe");
+
+        btnSubscribe.addEventListener("click", function (evt) {
+
+            evt.preventDefault();
+
+            var subscribe = document.querySelector("[name=subscribe]");
+
+            console.log(subscribe.value); //writes 'newsletter'
+
+            addToLog("Did the user subscribe: " + subscribe.checked);
+
+            return false;
+
+        });
+
+        function bindStateChanges() {
+
+            var interests = document.querySelectorAll("[name=interest");
+
+            for (var index = 0; index < interests.length; index++) {
+
+                interests[index].addEventListener("change", function (evt) {
+
+                    var checkbox = evt.target;
+
+                    addToLog(checkbox.value + " changed to " + checkbox.checked);
+
+                });
+
+                interests[index].addEventListener("input", function (evt) {
+
+                    var checkbox = evt.target;
+
+                    addToLog(checkbox.value + " input to " + checkbox.checked);
+
+                });
+
+            }
+
+        }
+
+        function setupIndeterminate() {
+
+            var pickInterest = document.querySelectorAll("[name=pickInterest"),
+                parentInterest = document.getElementById("pickInterests");
+
+            for (var index = 0; index < pickInterest.length; index++) {
+
+                var cb = pickInterest[index];
+
+                cb.addEventListener("change", function (evt) {
+
+                    var checked = 0;
+
+                    for (var j = 0; j < pickInterest.length; j++) {
+
+                        if (pickInterest[j].checked) {
+                            checked++;
+                        }
+
+                    }
+
+                    switch (checked) {
+                        case 0:
+
+                            parentInterest.checked = false;
+                            parentInterest.indeterminate = false;
+
+                            break;
+
+                        case 1:
+
+                            parentInterest.checked = false;
+                            parentInterest.indeterminate = true;
+
+                            break;
+
+                        default:
+
+                            parentInterest.checked = true;
+                            parentInterest.indeterminate = false;
+
+                            break;
+                    }
+
+                });
+
+            }
+
+        }
+
+        function validateInterest(evt) {
+
+            evt.preventDefault();
+
+            var mininterest = document.querySelectorAll("[name=mininterest]");
+
+            var count = 0,
+                interests = [];
+
+            for (var i = 0; i < mininterest.length; i++) {
+
+                if (mininterest[i].checked) {
+                    count++;
+                    interests.push(mininterest[i].value);
+                }
+
+            }
+
+            if (count > 1) {
+
+                addToLog("enough interests selected: " + interests);
+
+            } else {
+
+                addToLog("**NOT ENOUGH** interests selected: " + interests);
+
+            }
+
+            return false;
+
+        }
+
+        var btnInterest = document.getElementById("btnInterest");
+
+        btnInterest.addEventListener("click", validateInterest);
+
+        bindStateChanges();
+        setupIndeterminate();
+
+    </script>
+
+</body>
+
+</html>

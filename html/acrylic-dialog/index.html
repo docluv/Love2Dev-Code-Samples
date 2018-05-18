@@ -1,0 +1,104 @@
+`
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <base href="/">
+
+    <title>Love2Dev - Acryllic Dialog</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(/img/background-1932466_1920-320x212.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .main-container {
+            margin: 2em 0 0 2em;
+            width: calc(100vw - 4em);
+            height: calc(100vh - 4em);
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-center {
+            align-content: center;
+            justify-content: center;
+        }
+
+        .acrylic-dialog {
+            background: inherit;
+            width: 24rem;
+            height: 36rem;
+            box-shadow: 4px 4px 10px #333;
+            color: #fff;
+            position: relative;
+            flex: 1;
+            overflow: hidden;
+
+        }
+
+        .acrylic-dialog h1 {
+            width: 100%;
+            text-align: center;
+        }
+
+        .acrylic-dialog::before {
+            content: "";
+            background: inherit;
+            position: absolute;
+            left: -25px;
+            right: 0;
+            top: -25px;
+            bottom: 0;
+            box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.3);
+            filter: blur(10px);
+        }
+
+        .acrylic-dialog::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            box-shadow: 0 0 3px rgba(#000, .1);
+            background-color: rgba(#fff, .4);
+            background-image: url('http://api.thumbr.it/whitenoise-361x370.png?background=ffffff00&noise=a0a0a0&density=35&opacity=10');
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="flex flex-center">
+
+        <div class="acrylic-dialog flex flex-center main-container">
+            <h1>How to Center</h1>
+            <h2>Anything with HTML & CSS</h2>
+        </div>
+
+
+
+    </main>
+
+</body>
+
+</html>

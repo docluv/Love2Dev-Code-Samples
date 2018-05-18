@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML Demos - The TextArea</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            font-size: 1rem;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-center {
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .flex-vertical-center {
+            align-items: center;
+        }
+
+        .flex-horizontal-center {
+            justify-content: center;
+        }
+
+        .align-left {
+            text-align: left;
+        }
+
+        .align-right {
+            text-align: right;
+        }
+
+        .align-center {
+            text-align: center;
+        }
+
+        header {
+            width: 100%;
+            min-height: 80px;
+            margin: 5px 0 20px 0;
+            background-color: purple;
+        }
+
+        .navbar {
+            width: 100%;
+
+        }
+
+        .navbar li {
+            list-style-type: none;
+            display: inline-block;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.5em;
+            padding: 3px 5px;
+        }
+
+        .form-row {
+            position: relative;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        .form-control:focus {
+            color: #495057;
+            background-color: #fff;
+            border-color: #80bdff;
+            outline: 0;
+            box-shadow: 0px 0px 0px 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+        .form-row .form-control {
+            margin: 0 0 .5rem 0;
+            -webkit-border-radius: 0;
+            border-radius: 0;
+            padding: .3rem 0 .55rem 0;
+            background-image: none;
+            background-color: transparent;
+        }
+
+        .form-row textarea {
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            outline: 0;
+            box-shadow: none;
+            border: none;
+            border-bottom: 1px solid #ced4da;
+            border-radius: 0;
+            box-sizing: content-box;
+            background-color: transparent;
+            overflow-y: hidden;
+            padding: 1.5rem 0;
+            resize: none;
+        }
+
+        .form-row label {
+            position: absolute;
+            top: 0.65rem;
+            left: 0px;
+            -webkit-transition: .2s ease-out;
+            -o-transition: .2s ease-out;
+            transition: .2s ease-out;
+            cursor: text;
+            color: #757575;
+            display: inline-block;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-row label.placeholder,
+        .form-row label.active {
+            transform: translateY(-160%);
+            font-size: 0.8em;
+        }
+
+        .form-row textarea:not([readonly])textarea:focus+label {
+            color: #4285f4;
+        }
+
+        textarea {
+            overflow: auto;
+            resize: vertical;
+        }
+
+        textarea.valid{
+            border-color: #2a2;
+        }
+
+        textarea.invalid{
+            border-color: #a22;
+        }
+
+        fieldset {
+            margin: 2%;
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="flex flex-center">
+
+        <div class="form-row">
+            <textarea name="basic-textarea" id="basic-textarea" 
+            class="form-control" cols="30" rows="10"></textarea>
+            <label for="basic-textarea">Basic Textarea</label>
+        </div>
+
+        <div class="form-row">
+
+            <textarea name="hard-wrap-textarea" id="hard-wrap-textarea" class="form-control" cols="30" rows="10" wrap="hard"></textarea>
+            <label for="hard-wrap-textarea">Hard Wrap Textarea</label>
+        </div>
+        <div class="form-row">
+
+            <textarea name="soft-wrap-textarea" id="soft-wrap-textarea" class="form-control" cols="30" rows="10" wrap="soft"></textarea>
+            <label for="soft-wrap-textarea">Soft Wrap Textarea</label>
+        </div>
+        <div class="form-row">
+
+            <textarea name="onchange-textarea" id="onchange-textarea" class="form-control" cols="30" rows="10" wrap="none"></textarea>
+            <label for="onchange-textarea">No Wrap Textarea</label>
+        </div>
+
+        <div class="form-row">
+
+            <textarea name="onchange-textarea" id="onchange-textarea" class="form-control" cols="30" rows="10"></textarea>
+            <label for="onchange-textarea">OnChange Textarea</label>
+        </div>
+        <div class="form-row">
+
+            <textarea name="readonly-textarea" id="readonly-textarea" class="form-control" cols="30" rows="10" wrap="hard" readonly="yes"></textarea>
+            <label for="readonly-textarea">Read-Only Textarea</label>
+        </div>
+        <div class="form-row">
+
+            <textarea name="disabled-textarea" id="disabled-textarea" class="form-control" cols="30" rows="10" wrap="hard" disabled="yes"></textarea>
+            <label for="disabled-textarea">Disabled Textarea</label>
+        </div>
+
+        <div class="form-row">
+
+            <textarea name="placeholder-textarea" id="placeholder-textarea" class="form-control" cols="30" rows="10" placeholder="Enter your comment here..."></textarea>
+            <label for="placeholder-textarea" class="placeholder">Placeholder Textarea</label>
+        </div>
+
+        <div class="form-row">
+
+            <textarea name="min10-textarea" id="min10-textarea" class="form-control" cols="30" rows="10"></textarea>
+            <label for="min10-textarea" >10 Word Minimum Textarea</label>
+        </div>
+
+    </main>
+
+    <script>
+        var onchangeTxtArea = document.getElementById("onchange-textarea"),
+            labels = document.querySelectorAll("label");
+
+        onchangeTxtArea.addEventListener("change", function (e) {
+
+            e.preventDefault();
+
+            console.log(onchangeTxtArea.value);
+
+        });
+
+        for (var i = 0; i < labels.length - 1; i++) {
+
+            if (labels[i].htmlFor != '') {
+
+                var elem = document.getElementById(labels[i].htmlFor);
+
+                if (elem) {
+
+                    elem.label = labels[i];
+
+                    elem.addEventListener("focus", function (e) {
+
+                        e.target.label.classList.toggle("active");
+
+                    });
+
+                    elem.addEventListener("blur", function (e) {
+
+                        e.target.label.classList.toggle("active");
+
+                    });
+
+                }
+            }
+
+
+        }
+
+        var min10 = document.getElementById("min10-textarea");
+
+min10.addEventListener("input", function (e) {
+
+    var value = e.target.value;
+
+    if (value.match(/\S+/g).length > 10) {
+
+        e.target.classList.add("valid");
+        e.target.classList.remove("invalid");
+
+    } else {
+
+        e.target.classList.remove("valid");
+        e.target.classList.add("invalid");
+
+    }
+
+});
+    </script>
+
+</body>
+
+</html>

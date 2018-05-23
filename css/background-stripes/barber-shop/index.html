@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <base href="/">
+    <title>CSS Demos - Barbershop Pole Using Animated CSS Background Stripes</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .barbershop-pole {
+            width: 64px;
+            height: 100%;
+            margin: 0 auto;
+            background-color: #fff;
+            background-repeat: repeat-y;
+            background-size: 100% 88px;
+            background-position: 0% 0%;
+            background-image: repeating-linear-gradient(-25deg, #fff, #fff 20px, #df5646 20px, #df5646 40px, #fff 40px, #fff 60px, #1c78a4 60px, #1c78a4 80px);
+            animation: barberpole 4s linear infinite;
+        }
+
+        .barbershop-pole:before {
+            content: '';
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            z-index: 12;
+            border-right-style: solid;
+            border-left-style: solid;
+            border-right-width: 10px;
+            border-right-color: rgba(120, 120, 120, 0.1);
+            border-left-width: 14px;
+            border-left-color: rgba(60, 60, 60, 0.1);
+        }
+
+        @keyframes barberpole {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Barbershop Pole Effect</h1>
+
+    <div class="barbershop-pole"></div>
+
+</body>
+
+</html>

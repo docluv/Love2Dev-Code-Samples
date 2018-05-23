@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <base href="/">
+
+    <title>CSS Demos - Background Stripes</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            padding: 3%;
+        }
+
+        .horizontal-stripes {
+            background: repeating-linear-gradient( #fff,
+            #fff 20px,
+            #000 20px,
+            #000 40px);
+            height: 200px;
+            width: 200px;
+        }
+
+        .vertical-stripes {
+            background: repeating-linear-gradient( 90deg,
+            #fff,
+            #fff 20px,
+            #000 20px,
+            #000 40px);
+            height: 200px;
+            width: 200px;
+
+        }
+
+        .rotated-stripes {
+            background: repeating-linear-gradient( 45deg,
+            #fff,
+            #fff 20px,
+            #000 20px,
+            #000 40px);
+            height: 200px;
+            width: 200px;
+        }
+
+        .loader {
+            height: 20px;
+            width: 80%;
+            margin: auto;
+            background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-size: 1rem 1rem;
+            animation: loader 1s linear infinite;
+        }
+
+        .blue-loader-stripes {
+            background-color: #007bff;
+        }
+
+        .red-loader-stripes {
+            background-color: #dc3545 !important;
+        }
+
+        .yellow-loader-stripes {
+            background-color: #ffc107;
+        }
+
+        .purple-loader-stripes {
+            background-color: #563d7c;
+        }
+
+        .green-loader-stripes {
+            background-color: #28a745;
+        }
+
+
+
+        @keyframes loader {
+            0% {
+                background-position: 1rem 0;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Background Stripes Effect</h1>
+    <br>
+    <br>
+    <h3>Horizontal Stripes</h3>
+    <div class="horizontal-stripes"></div>
+    <br>
+    <h3>Vertical Stripes</h3>
+    <div class="vertical-stripes"></div>
+    <br>
+    <h3>Rotate Stripes</h3>
+    <div class="rotated-stripes"></div>
+    <br>
+    <br>
+    <br>
+    <h3>Blue Striped Loader</h3>
+    <div class="loader blue-loader-stripes"></div>
+    <h3>Red Striped Loader</h3>
+
+    <div class="loader red-loader-stripes"></div>
+    <h3>Yellow Striped Loader</h3>
+
+    <div class="loader yellow-loader-stripes"></div>
+    <h3>Purple Striped Loader</h3>
+
+    <div class="loader purple-loader-stripes"></div>
+    <h3>Green Striped Loader</h3>
+
+    <div class="loader green-loader-stripes"></div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="css/background-stripes/zig-zag/">Zig Zag Stripes</a>
+    <br>
+    <a href="css/background-stripes/barber-shop/">Barber Shop Pole</a>
+    <br>
+</body>
+
+</html>

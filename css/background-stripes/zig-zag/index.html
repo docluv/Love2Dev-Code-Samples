@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <base href="/">
+    <title>CSS Demos - Zig Zag Background Stripes</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .zig-zag {
+            width: 100%;
+            height: 100%;
+
+            background: linear-gradient(135deg, #111 25%, transparent 25%) -50px 0,
+            linear-gradient(225deg, #111 25%, transparent 25%) -50px 0,
+            linear-gradient(315deg, #111 25%, transparent 25%),
+            linear-gradient(45deg, #111 25%, transparent 25%);
+            background-size: 100px 100px;
+            background-color: #FFC0CB;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Zig-Zag Effect</h1>
+
+    <div class="zig-zag"></div>
+
+</body>
+
+</html>

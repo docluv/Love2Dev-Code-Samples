@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Confirm Dialog</title>
+
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+
+        body {
+            background: #fff;
+        }
+
+
+        .btn {
+            align-self: center;
+            outline: rgba(0, 0, 0, .870588) none 0;
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            white-space: nowrap;
+            vertical-align: middle;
+            user-select: none;
+            padding: .375rem .75rem;
+            margin: 10px 1px;
+            line-height: 1.5;
+            border: none;
+            border-radius: 2px;
+            position: relative;
+            letter-spacing: 0;
+            will-change: box-shadow, transform;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            cursor: pointer;
+            background: transparent;
+            color: #fff;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+        }
+
+        .btn-confirm {
+            background-color: #d52e2e;
+        }
+
+        .btn.prompt {
+            background-color: #00aac0;
+        }
+
+        .btn-confirm {
+            background-color: #eb8c00;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Confirm Dialog</h1>
+    </header>
+
+    <div class="main-content">
+        <button tabindex="0" class="btn btn-confirm simple-confirm" type="button">confirm</button>
+    </div>
+
+    <script>
+        var simpleconfirm = document.querySelector(".simple-confirm");
+
+        simpleconfirm.addEventListener("click", function (e) {
+
+            e.preventDefault();
+
+            console.log(confirm("This is an confirm Dialog"));
+
+        });
+    </script>
+
+</body>
+
+</html>

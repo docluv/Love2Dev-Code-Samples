@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Alert Banners</title>
+
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+
+        body {
+            background: #fff;
+        }
+
+        .btn {
+            align-self: center;
+            outline: rgba(0, 0, 0, .870588) none 0;
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            white-space: nowrap;
+            vertical-align: middle;
+            user-select: none;
+            padding: .375rem .75rem;
+            margin: 10px 1px;
+            line-height: 1.5;
+            border: none;
+            border-radius: 2px;
+            position: relative;
+            letter-spacing: 0;
+            will-change: box-shadow, transform;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            cursor: pointer;
+            background: transparent;
+            color: #fff;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+        }
+
+        .btn-alert {
+            background-color: #d52e2e;
+        }
+
+        .btn.prompt {
+            background-color: #00aac0;
+        }
+
+        .btn-confirm {
+            background-color: #eb8c00;
+        }
+
+.banner {
+    position: absolute;
+    z-index: 9999;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    display: none;
+}
+
+.banner.active {
+    display: block;
+}
+
+.banner-bottom {
+    left: 0;
+    right: 0;
+    bottom: 10px;
+}
+
+.banner-top {
+    left: 0;
+    right: 0;
+    top: 10px;
+}
+
+.banner-right {
+    right: 10px;
+    bottom: 10%;
+    min-height: 10vh;
+}
+
+.banner-left {
+    left: 10px;
+    bottom: 10%;
+    min-height: 10vh;
+}
+
+.alert-primary {
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+}
+
+.banner-close {
+    position: absolute;
+    right: 1.5%;
+}
+
+.banner-close:after {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    content: 'X';
+    color: #69f;
+}
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Custom Alert Banner</h1>
+    </header>
+
+    <div class="main-content">
+        <button tabindex="0" class="btn btn-alert simple-alert" type="button">Alert</button>
+    </div>
+
+    <script type="x-template" id="banner-template">
+
+        <div class="banner banner-top alert-primary active" role="alert">
+            A Custom Alert Message
+            <span class="banner-close"></span>
+        </div>
+
+    </script>
+
+    <script>
+        function getBannerTemplate() {
+
+            var template = document.querySelector("#banner-template");
+
+            return template.innerHTML;
+
+        }
+
+        function createFragment(htmlStr) {
+
+            var frag = document.createDocumentFragment(),
+                temp = document.createElement('div');
+
+            temp.innerHTML = htmlStr;
+
+            while (temp.firstChild) {
+                frag.appendChild(temp.firstChild);
+            }
+
+            return frag;
+        }
+
+        function injectTemplate(template) {
+
+            document.body.appendChild(createFragment(template));
+
+        }
+
+var simpleAlert = document.querySelector(".simple-alert");
+
+simpleAlert.addEventListener("click", function (e) {
+
+    e.preventDefault();
+
+    injectTemplate(getBannerTemplate());
+
+    var btnClose = document.querySelector(".banner-close");
+
+    btnClose.addEventListener("click", function (closeEvt) {
+
+    var banner = document.querySelector(".banner");
+
+        banner.parentNode.removeChild(banner);
+
+    });
+
+});
+    </script>
+
+</body>
+
+</html>

@@ -165,45 +165,41 @@
     <link href="css/login.css" rel="stylesheet" type="text/css">
 </head>
 
-<body>
-    <main class="d-flex flex-row justify-content-center mediterranean-cuisine">
-        <div class="z-depth-2 grey lighten-5 flex-center login-container shadow p-3 mb-5">
-            <div class="login-form mediterranean-cuisine">
-                <header class="text-center">
-                    <div class="brand-logo">
-                        <img srcset="img/wild-dot-logo-square-320x320.png 320w, img/wild-dot-logo-square-120x120.png 120w"
-                            src="img/wild-dot-logo-square-120x120.png" class="lazy-image" sizes="(max-width: 250px) 40vw, 120px"
-                            alt="wild-dot-logo-square">
-                    </div>
-                </header>
+<body class=" mediterranean-cuisine">
+    <main class="d-flex flex-row justify-content-center">
+        <div class="z-depth-2 grey lighten-5 flex-center login-container shadow p-3 mb-5 login-form mediterranean-cuisine">
+            <header class="text-center">
+                <div class="brand-logo">
+                    <img srcset="img/wild-dot-logo-square-320x320.png 320w, img/wild-dot-logo-square-120x120.png 120w"
+                        src="img/wild-dot-logo-square-120x120.png" class="lazy-image" sizes="(max-width: 250px) 40vw, 120px"
+                        alt="wild-dot-logo-square">
+                </div>
+            </header>
 
-                <form class="col s12 loginform" method="post">
-                    <div class="form-group">
-                        <label for="Username">Enter your email</label>
-                        <i class="fa fa-user prefix"></i>
-                        <input class="form-control validate" type="email" name="Username" autofocus />
-                    </div>
-                    <div class="form-group">
+            <form class="col s12 loginform" method="post">
+                <div class="form-group">
+                    <label for="Username">Enter your email</label>
+                    <i class="fa fa-user prefix"></i>
+                    <input class="form-control validate" type="email" name="Username" autofocus />
+                </div>
+                <div class="form-group">
 
-                        <label for="Password">Enter your password</label>
-                        <i class="fa fa-lock prefix"></i>
-                        <input class="form-control validate" type="password" name="Password" />
-                    </div>
-                    <div class="form-group">
-                        <a class="btn btn-link" href="login/password/recover/">Forgot Password</a>
-                    </div>
-                    <div class="form-group">
-                        <a href="signup/" class="btn btn-link">Create account</a>
-                    </div>
-                    <div class="form-group ">
-                        <button type="submit" name="btn_login" class="btn btn-large btn-login waves-effect ghost right col-sm-12">Login</button>
-                    </div>
-            </div>
-            <div class="row flex-container flex-around auth-providers"></div>
+                    <label for="Password">Enter your password</label>
+                    <i class="fa fa-lock prefix"></i>
+                    <input class="form-control validate" type="password" name="Password" />
+                </div>
+                <div class="form-group">
+                    <a class="btn btn-link" href="login/password/recover/">Forgot Password</a>
+                </div>
+                <div class="form-group">
+                    <a href="signup/" class="btn btn-link">Create account</a>
+                </div>
+                <div class="form-group ">
+                    <button type="submit" name="btn_login" class="btn btn-large btn-login waves-effect ghost right col-sm-12">Login</button>
+                </div>
             </form>
         </div>
-        </div>
-
+        <div class="row flex-container flex-around auth-providers"></div>
     </main>
 
 </body>

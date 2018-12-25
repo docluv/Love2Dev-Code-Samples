@@ -1,16 +1,19 @@
-`
 <!DOCTYPE html>
 <html>
 
 <head>
+
     <title>Love2Dev - Login Form</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../../css/libs/bootstrap.min.css" rel="stylesheet" type="text/css">
     <style>
         * {
             margin: 0;
             padding: 0;
         }
-        
+
         html,
         body {
             width: 100%;
@@ -19,26 +22,187 @@
             justify-content: center;
             align-items: center;
         }
-        
-    .flex{
-        display: flex;
-    }
 
-    .flex-center{
-        align-content: center;
-        justify-content: center;
-    }
+        .flex {
+            display: flex;
+        }
 
+        .flex-center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+        }
+
+
+        .btn.ghost {
+            background: none;
+            border-color: #fff;
+            color: #fff;
+            padding: 12px 22px;
+        }
+
+        .mediterranean-cuisine {
+            width: 100%;
+            height: 100%;
+            min-width: 100%;
+            min-height: 100%;
+            position: relative;
+        }
+
+        .mediterranean-cuisine::before {
+            background-image: url(/img/mediterranean-cuisine-2378758_1920-320x214.jpg);
+            background-size: cover;
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            filter: blur(3px);
+        }
+
+        .brand-logo img {
+            border-radius: 50%;
+        }
+
+        .login-form {
+            position: relative;
+            padding: 5% 3%;
+        }
+
+        .login-form::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #aaa;
+            /* opacity: .4; */
+        }
+
+        /* .login-form.mediterranean-cuisine {
+            border: 1px solid #333;
+        } */
+
+        .login-form.mediterranean-cuisine::before {
+            filter: blur(33px);
+        }
+
+
+        .login-form a,
+        .login-form label {
+            color: #fff;
+            font-size: 1.50em;
+        }
+
+        .login-form .row {
+            padding: 2% 1%;
+        }
+
+        .login-form input,
+        .login-form input:focus {
+            border: solid 1px #fff;
+            padding: 1%;
+            background-color: transparent;
+            border: solid 1px #fff;
+            color: #fff;
+            outline: none;
+            box-shadow: none;
+        }
+
+        .login-form .form-group {
+            margin-bottom: 10px;
+        }
+
+        @media (min-width: 321px) {
+            .mediterranean-cuisine::before {
+                background-image: url(/img/mediterranean-cuisine-2378758_1920-460x307.jpg);
+            }
+        }
+
+        @media (min-width: 461px) {
+            .mediterranean-cuisine::before {
+                background-image: url(/img/mediterranean-cuisine-2378758_1920-720x480.jpg);
+            }
+        }
+
+        @media (min-width: 721px) {
+            .mediterranean-cuisine::before {
+                background-image: url(/img/mediterranean-cuisine-2378758_1920-980x654.jpg);
+            }
+        }
+
+        @media (min-width: 981px) {
+            .mediterranean-cuisine::before {
+                background-image: url(/img/mediterranean-cuisine-2378758_1920-1240x827.jpg);
+            }
+        }
+
+        @media (min-width: 1241px) {
+            .mediterranean-cuisine::before {
+                background-image: url(/img/mediterranean-cuisine-2378758_1920-1500x1000.jpg);
+            }
+        }
+
+        @media (min-width: 1501px) {
+            .mediterranean-cuisine::before {
+                background-image: url(/img/mediterranean-cuisine-2378758_1920-1760x1174.jpg);
+            }
+        }
+
+        @media (min-width: 1761px) {
+            .mediterranean-cuisine::before {
+                background-image: url(/img/mediterranean-cuisine-2378758_1920-1920x1280.jpg);
+            }
+        }
     </style>
+
+    <link href="css/login.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
+    <main class="d-flex flex-row justify-content-center mediterranean-cuisine">
+        <div class="z-depth-2 grey lighten-5 flex-center login-container shadow p-3 mb-5">
+            <div class="login-form mediterranean-cuisine">
+                <header class="text-center">
+                    <div class="brand-logo">
+                        <img srcset="img/wild-dot-logo-square-320x320.png 320w, img/wild-dot-logo-square-120x120.png 120w"
+                            src="img/wild-dot-logo-square-120x120.png" class="lazy-image" sizes="(max-width: 250px) 40vw, 120px"
+                            alt="wild-dot-logo-square">
+                    </div>
+                </header>
 
-    <main class="flex flex-center">
+                <form class="col s12 loginform" method="post">
+                    <div class="form-group">
+                        <label for="Username">Enter your email</label>
+                        <i class="fa fa-user prefix"></i>
+                        <input class="form-control validate" type="email" name="Username" autofocus />
+                    </div>
+                    <div class="form-group">
 
-
-        
-
+                        <label for="Password">Enter your password</label>
+                        <i class="fa fa-lock prefix"></i>
+                        <input class="form-control validate" type="password" name="Password" />
+                    </div>
+                    <div class="form-group">
+                        <a class="btn btn-link" href="login/password/recover/">Forgot Password</a>
+                    </div>
+                    <div class="form-group">
+                        <a href="signup/" class="btn btn-link">Create account</a>
+                    </div>
+                    <div class="form-group ">
+                        <button type="submit" name="btn_login" class="btn btn-large btn-login waves-effect ghost right col-sm-12">Login</button>
+                    </div>
+            </div>
+            <div class="row flex-container flex-around auth-providers"></div>
+            </form>
+        </div>
+        </div>
 
     </main>
 

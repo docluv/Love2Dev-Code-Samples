@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Object Inheritance</title>
+
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+
+        body {
+            background: #fff;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <script>
+        /**
+         * Point a child's prototype to a parent's prototype
+         **/
+        var extendObj = function ( childObj, parentObj ) {
+            var tmpObj = function () {}
+            tmpObj.prototype = parentObj.prototype;
+            childObj.prototype = new tmpObj();
+            childObj.prototype.constructor = childObj;
+        };
+
+        var Base = {
+            foo: 123,
+            bar: function () {
+                return this.foo;
+            }
+        };
+
+        // base human object
+        var Human = {
+            name: '',
+            gender: '',
+            planetOfBirth: 'Earth',
+            sayGender: function () {
+                alert( this.name + ' says my gender is ' + this.gender );
+            },
+            sayPlanet: function () {
+                alert( this.name + ' was born on ' + this.planetOfBirth );
+            }
+        };
+
+        // male
+        var Male = Object.assign( {}, Human, Base );
+
+        Male.init = function ( name ) {
+            this.gender = 'Male';
+            this.name = 'David';
+        };
+
+        var Female = Object.assign( {}, Human, Base );
+        Female.gender = "Female";
+
+        // new instances
+        Male.init( 'David' );
+
+        Male.sayGender(); // David says my gender is Male
+
+        alert( Male.bar() );
+        Male.foo = "abc";
+        alert( Male.bar() );
+
+        Female.sayGender(); // David says my gender is Male
+    </script>
+</body>
+
+</html>

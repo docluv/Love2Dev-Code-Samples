@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <base href="/">
+
+    <title>Love2Dev - Header Bar</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../../css/libs/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn.ghost {
+            background: none;
+            border-color: #fff;
+            color: #fff;
+            padding: 12px 22px;
+        }
+
+        .mediterranean-cuisine {
+            width: 100%;
+            height: 100%;
+            min-width: 100%;
+            min-height: 100%;
+            position: relative;
+        }
+
+        .mediterranean-cuisine::before {
+            background-image: url(/img/mediterranean-cuisine-2378758_1920-320x214.jpg);
+            background-size: cover;
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            filter: blur(3px);
+        }
+
+        .brand-logo img {
+            border-radius: 50%;
+        }
+
+        .login-form {
+            position: relative;
+            padding: 5% 3%;
+        }
+
+        .login-form::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #aaa;
+            /* opacity: .4; */
+        }
+
+        /* .login-form.mediterranean-cuisine {
+            border: 1px solid #333;
+        } */
+
+        .login-form.mediterranean-cuisine::before {
+            filter: blur(33px);
+        }
+
+
+        .login-form a,
+        .login-form label {
+            color: #fff;
+            font-size: 1.50em;
+        }
+
+        .login-form .row {
+            padding: 2% 1%;
+        }
+
+        .login-form input,
+        .login-form input:focus {
+            border: solid 1px #fff;
+            padding: 1%;
+            background-color: transparent;
+            border: solid 1px #fff;
+            color: #fff;
+            outline: none;
+            box-shadow: none;
+        }
+
+        .login-form .form-group {
+            margin-bottom: 10px;
+        }
+
+        @media (min-width: 321px) {
+            .mediterranean-cuisine::before {
+                background-image: url(/img/mediterranean-cuisine-2378758_1920-460x307.jpg);
+            }
+        }
+
+        @media (min-width: 461px) {
+            .mediterranean-cuisine::before {
+                background-image: url(/img/mediterranean-cuisine-2378758_1920-720x480.jpg);
+            }
+        }
+
+        @media (min-width: 721px) {
+            .mediterranean-cuisine::before {
+                background-image: url(/img/mediterranean-cuisine-2378758_1920-980x654.jpg);
+            }
+        }
+
+        @media (min-width: 981px) {
+            .mediterranean-cuisine::before {
+                background-image: url(/img/mediterranean-cuisine-2378758_1920-1240x827.jpg);
+            }
+        }
+
+        @media (min-width: 1241px) {
+            .mediterranean-cuisine::before {
+                background-image: url(/img/mediterranean-cuisine-2378758_1920-1500x1000.jpg);
+            }
+        }
+
+        @media (min-width: 1501px) {
+            .mediterranean-cuisine::before {
+                background-image: url(/img/mediterranean-cuisine-2378758_1920-1760x1174.jpg);
+            }
+        }
+
+        @media (min-width: 1761px) {
+            .mediterranean-cuisine::before {
+                background-image: url(/img/mediterranean-cuisine-2378758_1920-1920x1280.jpg);
+            }
+        }
+    </style>
+
+    <link href="css/header-bar.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class=" mediterranean-cuisine">
+    <div class="d-flex flex-row col-sm-12 header-bar bg-primary text-white fixed-top">
+        <div class="d-flex flex-row col-sm-12 header-bar bg-primary text-white fixed-top justify-content-end align-items-center">
+            <div class="btn btn-logout btn-link text-white">logout</div>
+            <div class="dropdown">
+                <div class="profile-avatar dropdown-toggle" id="avatarDropDownBtn" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <img src="img/avtar-8.jpg" alt="John Smith">
+                </div>
+                <div class="dropdown-menu" aria-labelledby="avatarDropDownBtn">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="d-flex flex-row justify-content-center">
+
+        <form class="contact-form" action="https://oxqix53sd3.execute-api.us-east-1.amazonaws.com/prod/contact" method="POST">
+
+            <div class="form-group">
+                <label for="image">Image</label>
+                <input name="image" type="file">
+            </div>
+
+            <div class="form-group form-right-btns float-right ">
+                <input type="submit" class="waves-effect waves-light btn btn-primary btn-contact" />
+            </div>
+
+        </form>
+
+
+    </main>
+
+    <script>
+        function bindForm() {
+
+            var contactBtn = document.querySelector( ".btn-contact" );
+
+            if ( contactBtn ) {
+
+                contactBtn.addEventListener( "click", postContact );
+
+            }
+
+        }
+
+        function postContact( e ) {
+
+            e.preventDefault();
+
+            var contactForm = document.querySelector( ".contact-form" );
+
+            if ( contactForm ) {
+
+                var data = new FormData( contactForm );
+
+                fetch( "https://n20rhkkjt6.execute-api.us-east-1.amazonaws.com/dev/contact", {
+                    method: 'POST',
+                    body: data
+                } ).then( function ( response ) {
+
+                    if ( response && response.ok ) {
+
+                        console.log( "post successful" );
+
+                    }
+
+                } );
+
+            }
+
+            return false;
+
+        }
+
+        bindForm();
+    </script>
+</body>
+
+</html>

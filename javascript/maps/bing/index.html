@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <base href="/">
+
+    <title>Web Development Demos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+
+    <style>
+        body {
+            padding: 10%;
+        }
+
+        p {
+            text-transform: capitalize;
+        }
+    </style>
+
+    <script src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var map,
+            key = "AhaIINiPx7fFhniR7uDHdWZ1JB2NgDpISNPG7nolC_3U2AhhRU2aqTsiUkKpIzZ1",
+            watchId,
+            pinid = 0;
+
+        function OnPageLoad() {
+
+            var height = "innerHeight" in window ?
+                window.innerHeight :
+                document.documentElement.offsetHeight,
+                myMap = document.getElementById( 'myMap' );
+
+            myMap.style.height = ( height * .8 ) + "px";
+
+            if ( navigator.geolocation ) {
+
+                if ( navigator.geolocation.watchPosition ) {
+                    watchId = navigator.geolocation.watchPosition( setCurrentPosition );
+                } else {
+                    navigator.geolocation.getCurrentPosition( setCurrentPosition );
+                }
+            }
+
+        }
+
+
+        function setCurrentPosition( position ) {
+
+            var zoom = 18;
+
+            map = new Microsoft.Maps.Map( myMap, {
+                credentials: key,
+                center: new Microsoft.Maps.Location( position.coords.latitude,
+                    position.coords.longitude ),
+                mapTypeId: Microsoft.Maps.MapTypeId.road,
+                showScalebar: false,
+                showDashboard: false,
+                zoom: zoom
+            } );
+
+            document.querySelector( '.accuracy' ).innerHTML = position.coords.accuracy;
+            document.querySelector( '.altitude' ).innerHTML = position.coords.altitude;
+            document.querySelector( '.altitudeAccuracy' ).innerHTML = position.coords.altitudeAccuracy;
+            document.querySelector( '.heading' ).innerHTML = position.coords.heading;
+            document.querySelector( '.latitude' ).innerHTML = position.coords.latitude;
+            document.querySelector( '.longitude' ).innerHTML = position.coords.longitude;
+            document.querySelector( '.speed' ).innerHTML = position.coords.speed;
+
+            AddPushpin( position.coords );
+
+        }
+
+        function AddPushpin( coords ) {
+
+            var pin = new Microsoft.Maps.Pushpin( coords, {
+                icon: "img/marker-image.png",
+                text: 'I AM HERE!'
+            } );
+
+            map.entities.push( pin );
+        }
+    </script>
+
+</head>
+
+<body onload="OnPageLoad();">
+    <div id="myMap" style="position:relative;width:100%;height:90%;"></div>
+    <div>
+        <label>accuracy:</label><span class="accuracy"></span><br />
+        <label>altitude:</label><span class="altitude"></span><br />
+        <label>altitudeAccuracy:</label><span class="altitudeAccuracy"></span><br />
+        <label>heading:</label><span class="heading"></span><br />
+        <label>latitude:</label><span class="latitude"></span><br />
+        <label>longitude:</label><span class="longitude"></span><br />
+        <label>speed:</label><span class="speed"></span><br />
+        <a href="javascript/maps/google/">Google</a><br />
+        <span class="OMG"></span>
+    </div>
+</body>
+
+</html>

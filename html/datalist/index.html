@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Love2Dev - DataList Examples</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../../css/libs/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <main class="d-flex flex-row justify-content-center">
+        <section class="d-flex my-5 border-bottom border-dark">
+
+            <input id="email" type="email" multiple name="cc" list="contacts" />
+            <datalist id="contacts"></datalist>
+
+        </section>
+        <section class="d-flex my-5 border-bottom border-dark">
+
+            <input id="search" type="search" multiple name="search" list="search" />
+            <datalist id="search"></datalist>
+
+        </section>
+    </main>
+
+    <script>
+        var data = {
+            "emails": [ "Manuela.Zboncak64@hotmail.com",
+                "Devan31@yahoo.com", "Felicia44@hotmail.com", "Jorge_Dicki@hotmail.com",
+                "Karlie.Conn@yahoo.com",
+                "Shanon.Gleason95@gmail.com", "Nico_Pacocha62@hotmail.com", "Athena.Witting77@yahoo.com",
+                "Denis_Dicki84@yahoo.com",
+                "Silas.Miller@hotmail.com", "Julia_Baumbach62@yahoo.com", "Mossie63@gmail.com",
+                "Adolf.Vandervort40@gmail.com",
+                "Gudrun_Thiel75@gmail.com", "Shawna.Adams52@hotmail.com", "William21@hotmail.com",
+                "Wava.Muller70@hotmail.com",
+                "German.Pfannerstill59@hotmail.com", "Fae.Friesen@gmail.com", "Jordi.Krajcik@gmail.com",
+                "Tyrese11@hotmail.com",
+                "Abbigail89@yahoo.com"
+            ],
+            "terms": [ "Savings Account embrace Ergonomic Granite Computer program",
+                "tan interactive Ford Outdoors Buckinghamshire",
+                "interface Kenyan Shilling Computers Guinea-Bissau multi-byte",
+                "internet solution Games Soft",
+                "digital",
+                "transmit compressing systems driver",
+                "Directives View Principal utilize", "teal Ergonomic Realigned EXE invoice",
+                "Keyboard Specialist Bedfordshire Tasty Wooden Table ",
+                "synthesize turn-key ", "e-commerce payment FTP ",
+                "grow Generic ", "USB withdrawal ",
+                "tan Armenian Dram strategic quantifying Handmade Granite Pants ",
+                "TCP Handcrafted Avon Specialist Haiti ", "Checking Account transmitter deposit "
+            ]
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Love2Dev - Modal Slide in From Right</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../../css/libs/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+position: relative;
+            justify-content: center;
+            align-items: center;
+        }
+
+/*******************************
+* MODAL AS LEFT/RIGHT SIDEBAR
+* Add "left" or "right" in modal parent div, after class="modal".
+* Get free snippets on bootpen.com
+*******************************/
+.modal.left .modal-dialog,
+.modal.right .modal-dialog {
+position: fixed;
+margin: auto;
+width: 320px;
+height: 100%;
+transform: translate3d(0%, 0, 0);
+}
+
+.modal.left .modal-content,
+.modal.right .modal-content {
+height: 100%;
+overflow-y: auto;
+}
+
+.modal.left .modal-body,
+.modal.right .modal-body {
+padding: 15px 15px 80px;
+}
+
+/*Left*/
+.modal.left.fade .modal-dialog{
+left: -320px;
+transition: opacity 0.3s linear, left 0.3s ease-out;
+}
+
+.modal.left.fade.in .modal-dialog{
+left: 0;
+}
+
+/*Right*/
+.modal.right.fade .modal-dialog {
+right: -320px;
+transition: opacity 0.3s linear, right 0.3s ease-out;
+}
+
+.modal.right.fade.in .modal-dialog {
+right: 0;
+}
+
+/* ----- MODAL STYLE ----- */
+.modal-content {
+border-radius: 0;
+border: none;
+}
+
+.modal-header {
+border-bottom-color: #EEEEEE;
+background-color: #FAFAFA;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+    <main class="d-flex flex-row justify-content-center">
+
+        <div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel2">Right Sidebar</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <h1>SUBSCRIBE OUR WEBSITE</h1>
+                        <p>This Designe By <strong>RAJ KUMAR</strong> Enter your E-mail and animated subscribe form.</p>
+                        <input type="email" placeholder="email" required>
+                        <button>SEND</button>
+                        <div class="cross"><i class="fa fa-times" style="color: #fff;"></i></div>
+                    </div>
+
+                </div><!-- modal-content -->
+            </div><!-- modal-dialog -->
+        </div><!-- modal -->
+    </main>
+
+    <script>
+
+
+    </script>
+
+</body>
+
+</html>

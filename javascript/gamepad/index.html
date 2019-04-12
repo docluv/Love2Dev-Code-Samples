@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Web Development Demos</title>
+
+    <style>
+        body {
+            padding: 10%;
+        }
+
+        p {
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <script>
+        var gamepads = {};
+
+        window.addEventListener( "gamepadconnected", function ( e ) {
+
+            console.log( "Gamepad connected at index %d: %s. %d buttons, %d axes.",
+                e.gamepad.index, e.gamepad.id,
+                e.gamepad.buttons.length, e.gamepad.axes.length );
+
+            gamepads[ gamepad.index ] = gamepad;
+
+        } );
+
+        window.addEventListener( "gamepaddisconnected", function ( e ) {
+
+            console.log( "Gamepad disconnected from index %d: %s",
+                e.gamepad.index, e.gamepad.id );
+
+            delete gamepads[ gamepad.index ];
+
+        } );
+    </script>
+</body>
+
+</html>

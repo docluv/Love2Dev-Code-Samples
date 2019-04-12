@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <base href="/">
+
+    <title>Web Development Demos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+
+    <style>
+        body {
+            padding: 10%;
+        }
+
+        p {
+            text-transform: capitalize;
+        }
+
+        #map_canvas {
+            margin: 0;
+            padding: 0;
+            height: 80%;
+        }
+    </style>
+
+    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyC36oVKdhBY20C-i3FvY3eOciuS7rsilio">
+    </script>
+
+    <script type="text/javascript">
+        var map,
+            watchId,
+            marker;
+
+        function initialize() {
+
+            if ( navigator.geolocation ) {
+                if ( navigator.geolocation.watchPosition ) {
+                    watchId = navigator.geolocation.watchPosition( setCurrentPosition );
+                } else {
+                    navigator.geolocation.getCurrentPosition( setCurrentPosition );
+                }
+            }
+
+        }
+
+        google.maps.event.addDomListener( window, 'load', initialize );
+
+        function setCurrentPosition( position ) {
+
+            var myOptions = {
+                zoom: 18,
+                center: new google.maps.LatLng( position.coords.latitude, position.coords.longitude ),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            if ( !map ) {
+
+                map = new google.maps.Map( document.getElementById( 'map_canvas' ), myOptions );
+
+            } else {
+                map.setCenter( new google.maps.LatLng( position.coords.latitude, position.coords.longitude,
+                    true ) );
+            }
+
+
+            document.querySelector( '.accuracy' ).innerHTML = position.coords.accuracy;
+            document.querySelector( '.altitude' ).innerHTML = position.coords.altitude;
+            document.querySelector( '.altitudeAccuracy' ).innerHTML = position.coords.altitudeAccuracy;
+            document.querySelector( '.heading' ).innerHTML = position.coords.heading;
+            document.querySelector( '.latitude' ).innerHTML = position.coords.latitude;
+            document.querySelector( '.longitude' ).innerHTML = position.coords.longitude;
+            document.querySelector( '.speed' ).innerHTML = position.coords.speed;
+
+            AddPushpin( new google.maps.LatLng( position.coords.latitude, position.coords.longitude, true ) );
+
+        }
+
+        function AddPushpin( latLong ) {
+
+            if ( !marker ) {
+
+                marker = new google.maps.Marker( {
+                    position: latLong,
+                    map: map
+                } );
+
+            } else {
+                marker.setPosition( latLong );
+            }
+
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="map_canvas"></div>
+    <div>
+        <label>accuracy:</label><span class="accuracy"></span><br />
+        <label>altitude:</label><span class="altitude"></span><br />
+        <label>altitudeAccuracy:</label><span class="altitudeAccuracy"></span><br />
+        <label>heading:</label><span class="heading"></span><br />
+        <label>latitude:</label><span class="latitude"></span><br />
+        <label>longitude:</label><span class="longitude"></span><br />
+        <label>speed:</label><span class="speed"></span><br />
+        <a href="javascript/maps/bing/">Bing</a>
+    </div>
+</body>
+
+</html>

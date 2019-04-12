@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Web Development Demos</title>
+
+    <style>
+        body {
+            padding: 10%;
+        }
+
+        p {
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-empty">
+        <div class="wrapper ">
+
+            <main class="main-content flex-container">
+                <div class="z-depth-2 grey lighten-5 flex-container flex-absolute-center login-container">
+                    <div class="login-form">
+                        <header class="text-center">
+                            <h1>Camera Demo</h1>
+                        </header>
+                        <div class="loader1" hidden>
+                            <img src="images/newloader.gif" alt="CoreAuth" />
+                        </div>
+                        <!-- <img id="profile-img" class="profile-img-card" src="img/avatar_2x.png" /> -->
+                        <div class="face-recognition-mediaCapture ">
+                            <div class="row">
+                                <select id="videoSource"></select>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <div class="video-source-wrapper">
+                                        <video id="player" class="faceid-camera" autoplay></video>
+                                    </div>
+                                    <div class="row-captured-face hide">
+                                        <canvas class="user-face"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-capture-btn hide">
+
+                                <button class="btn btn-capture waves-effect waves-light grey darken-3 right"
+                                    type="button" name="Capture">
+                                    Capture
+                                    <i class="fa fa-camera-retro"></i>
+                                </button>
+                            </div>
+                            <div class="row flex-container flex-around auth-providers"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </main>
+
+        </div>
+    </div>
+
+
+    <script src="camera.js" type="application/javascript"></script>
+    <script>
+
+
+    </script>
+</body>
+
+</html>

@@ -13,6 +13,7 @@
         "@hint/configuration-development": "^1.1.1",
         "hint": "^3.4.4",
         "http-server": "*",
+        "faker": "*",
         "popper.js": "*"
     }
 }

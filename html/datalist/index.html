@@ -22,23 +22,68 @@
             justify-content: center;
             align-items: center;
         }
+
+        datalist option {
+            padding: 2px 3px;
+            background-color: #dedede;
+            color: #22f;
+        }
     </style>
 
 </head>
 
 <body>
 
-    <main class="d-flex flex-row justify-content-center">
-        <section class="d-flex my-5 border-bottom border-dark">
+    <main class="d-flex flex-column justify-content-center container">
+        <section class="d-flex my-5 border-bottom border-dark row">
 
-            <input id="email" type="email" multiple name="cc" list="contacts" />
-            <datalist id="contacts"></datalist>
+            <div class="form-group">
+                <label for="email">Enter your email</label>
+                <i class="fa fa-user prefix"></i>
+                <input id="email" type="email" multiple name="email" list="contacts" />
+                <datalist id="contacts">
+                    <option value="Manuela.Zboncak64@hotmail.com"></option>
+                    <option value="Felicia44@hotmail.com"></option>
+                    <option value="Denis_Dicki84@yahoo.com"></option>
+                    <option value="Julia_Baumbach62@yahoo.com"></option>
+                </datalist>
+            </div>
 
         </section>
-        <section class="d-flex my-5 border-bottom border-dark">
+        <section class="d-flex my-5 border-bottom border-dark row">
 
-            <input id="search" type="search" multiple name="search" list="search" />
-            <datalist id="search"></datalist>
+            <div class="form-group">
+                <label for="number-example">Enter a Number</label>
+                <i class="fa fa-user prefix"></i>
+                <input id="number-example" type="number" name="number-example" list="number-contacts" />
+                <datalist id="number-contacts">
+                    <option value="Manuela.Zboncak64@hotmail.com"></option>
+                    <option value="Felicia44@hotmail.com"></option>
+                    <option value="Denis_Dicki84@yahoo.com"></option>
+                    <option value="Julia_Baumbach62@yahoo.com"></option>
+                </datalist>
+            </div>
+
+        </section>
+        <section class="d-flex my-5 border-bottom border-dark row">
+
+            <div class="form-group">
+                <label for="email">Enter your email</label>
+                <i class="fa fa-user prefix"></i>
+                <input id="dynamic-email" type="email" multiple name="dynamic-email" list="dynamic-contacts" />
+                <datalist id="dynamic-contacts"></datalist>
+            </div>
+
+        </section>
+        <section class="d-flex my-5 border-bottom border-dark row">
+
+            <div class="form-group">
+                <label for="search">Search</label>
+                <i class="fa fa-user prefix"></i>
+                <input id="dynamic-search" type="search" multiple name="search" list="search" />
+                <datalist id="search"></datalist>
+
+            </div>
 
         </section>
     </main>
@@ -71,7 +116,62 @@
                 "tan Armenian Dram strategic quantifying Handmade Granite Pants ",
                 "TCP Handcrafted Avon Specialist Haiti ", "Checking Account transmitter deposit "
             ]
+        };
+
+        var dcl = document.getElementById( "dynamic-email" );
+
+        dcl.addEventListener( "focus", bindEmailList );
+
+        dcl.addEventListener( "keyup", function ( e ) {
+
+            e.preventDefault();
+
+            if ( e.keyCode !== 13 ) {
+
+                bindEmailList();
+
+            }
+
+            return false;
+
+        } );
+
+
+        function bindEmailList() {
+
+            var dynamicContacts = document.getElementById( "dynamic-contacts" );
+
+            while ( dynamicContacts.firstChild ) {
+                dynamicContacts.removeChild( dynamicContacts.firstChild );
+            }
+
+            // Loop over the JSON array.
+            data.emails.forEach( function ( item ) {
+
+                // Create a new <option> element.
+                var option = document.createElement( 'option' );
+
+                // Set the value using the item in the JSON array.
+                option.value = item;
+
+                // Add the <option> element to the <datalist>.
+
+                dynamicContacts.appendChild( option );
+            } );
+
         }
+
+        var dynamicSearch = document.getElementById( "search" );
+
+        // Loop over the JSON array.
+        data.terms.forEach( function ( item ) {
+
+            var option = document.createElement( 'option' );
+
+            option.value = item;
+
+            dynamicSearch.appendChild( option );
+        } );
     </script>
 
 </body>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML Demos - The Checkbox</title>
+
+    <link href="../../css/libs/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+
+    <main class="d-flex container">
+        <div class="row mx-3 p-3">
+            <form action="/submission-url" method="post" enctype="application/x-www-form-urlencoded">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName" aria-describedby="firstNameHelp"
+                        placeholder="Enter your First Name" tabindex="1" autocomplete="off" autocorrect="off" required
+                        autofocus accesskey="1">
+                    <small id="firstNameHelp" class="form-text text-muted">We'll never share your email with anyone
+                        else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Enter your Last Name"
+                        tabindex="2" autocomplete="off" autocorrect="off" required accesskey="l">
+                </div>
+                <div class="form-group">
+                    <label for="contactEMail">Email address</label>
+                    <input type="email" class="form-control" id="contactEMail" placeholder="Enter email" tabindex="3"
+                        required>
+                </div>
+                <div class="form-group has-feedback">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" required rows="6" id="message" name="message" placeholder=""
+                        tabindex="4" required></textarea>
+                </div>
+                <div class="btn-row flex-right">
+                    <input type="submit" value="Submit" class="btn-contact-submit btn btn-success" tabindex="5">
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script>
+
+
+    </script>
+
+</body>
+
+</html>

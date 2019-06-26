@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS Demos - Changing Bulleted Lists</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner-test {
+            position: fixed;
+            display: flex;
+            z-index: 1000;
+            width: 50%;
+            background-color: aquamarine;
+            color: #fff;
+            padding: 1%;
+        }
+
+        .banner-top-left {
+            top: 0;
+            left: 0;
+        }
+
+        .banner-top-right {
+            top: 0;
+            right: 0;
+        }
+
+        .banner-bottom-left {
+            left: 0;
+            bottom: 0;
+        }
+
+        .banner-bottom-right {
+            right: 0;
+            bottom: 0;
+        }
+
+        .banner-center {
+            width: 50%;
+            left: 25%;
+            top: 25%;
+        }
+
+        .banner-center-left {
+            top: 25%;
+            left: 0;
+        }
+
+        .banner-center-right {
+            top: 25%;
+            right: 0;
+        }
+
+        .banner-top-center {
+            width: 50%;
+            left: 25%;
+            top: 12px;
+        }
+
+        .banner-bottom-center {
+            width: 50%;
+            left: 25%;
+            bottom: 12px;
+        }
+
+        @media (min-width: 576px) {
+
+            .banner-dialog-centered {
+                min-height: calc(100% - 3.5rem);
+            }
+
+        }
+
+        @media (min-width: 992px) {
+
+            .banner-lg {
+                width: 50%;
+            }
+
+            .banner-lg-top-center {
+                left: 25%;
+                top: 12px;
+            }
+
+            .banner-lg-bottom-center {
+                left: 25%;
+                bottom: 12px;
+            }
+
+        }
+
+        /* support styles */
+
+        .button-row {
+            margin: 24px auto;
+            display: flex;
+            align-items: center;
+            padding: 6px;
+
+        }
+
+        .btn {
+            display: inline-block;
+            font-weight: 400;
+            color: #212529;
+            text-align: center;
+            vertical-align: middle;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="button-row">
+        <button class="top-left-btn btn">Top Left</button>
+        <button class="top-center-btn btn">Top Center</button>
+        <button class="top-right-btn btn">Top Right</button>
+        <button class="center-btn btn">Center</button>
+        <button class="bottom--left-btn btn">Bottom Left</button>
+        <button class="bottom-center-btn btn">Bottom Center</button>
+        <button class="bottom-right-btn btn">Bottom Right</button>
+    </div>
+
+    <div class="banner-test banner-bottom-center">
+        <h1>This is the Modal Message</h1>
+        <img sizes="(max-width: 736px) 70vw,(max-width: 2000px) 40vw, 960px" alt="MLB Ballpark App Opening Day Fail"
+            srcset="https://love2dev.com/img/mlb-ballpark-app-opening-day-fail-960x540.jpg
+            960w,https://love2dev.com/img/mlb-ballpark-app-opening-day-fail-900x507.jpg
+            900w,https://love2dev.com/img/mlb-ballpark-app-opening-day-fail-720x405.jpg
+            720w,https://love2dev.com/img/mlb-ballpark-app-opening-day-fail-460x259.jpg
+            460w,https://love2dev.com/img/mlb-ballpark-app-opening-day-fail-320x180.jpg 320w"
+            src="https://love2dev.com/img/mlb-ballpark-app-opening-day-fail-960x540.jpg">
+    </div>
+
+    <script>
+        function bindButtons() {
+
+            var buttons = document.querySelectorAll( ".btn" );
+
+            buttons.forEach( function ( btn ) {
+
+                btn.addEventListener( "click", function ( evt ) {
+
+                    evt.preventDefault();
+
+                    var btn = evt.target,
+                        x = btn.getAttribute( "modal-x" ),
+                        y = btn.getAttribute( "modal-y" ),
+                        isModal = btn.getAttribute( "modal-bg" );
+
+                    showBanner( {
+                        x: x,
+                        y: y,
+                        isModal: isModal
+                    } );
+
+                    return false;
+
+                } );
+
+            } );
+
+        }
+
+        function showBanner( options ) {
+
+            var modalDlg = document.querySelector( ".modal-dlg" ),
+                modalBg = document.querySelector( ".modal-bg" );
+
+        }
+    </script>
+</body>
+
+</html>

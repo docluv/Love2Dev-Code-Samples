@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Web Development Demos</title>
+
+    <style>
+        body {
+            padding: 10%;
+        }
+
+        .vertical-menu {
+            text-align: center;
+            -moz-transform: rotate(-90deg) translateX(-80px) translateY(-80px);
+            -webkit-transform: rotate(-90deg) translateX(-80px) translateY(-80px);
+            -o-transform: rotate(-90deg) translateX(-80px) translateY(-80px);
+            transform: rotate(-90deg) translateX(-80px) translateY(-80px);
+            width: 250px;
+            height: 70px;
+            margin: 0;
+        }
+
+        .nav-item {
+            background-color: #c30000;
+            color: #fff;
+            border-radius: 4px;
+            height: 24px;
+            line-height: 24px;
+            vertical-align: middle;
+            margin: 5px auto;
+            padding: 2px 10px;
+            display: inline-block;
+        }
+
+        .nav-item-selected {
+            background-color: #7F0000;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="vertical-menu">
+        <span class="nav-item">BLUE</span>
+        <span class="nav-item nav-item-selected">RED</span>
+        <span class="nav-item">GREEN</span>
+        <span class="nav-item">YELLOW</span>
+        <span class="nav-item">PURPLE</span>
+    </nav>
+</body>
+
+</html>

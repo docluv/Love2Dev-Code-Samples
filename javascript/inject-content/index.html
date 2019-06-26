@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Love2Dev - DataList Examples</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../../css/libs/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <main class="d-flex flex-row justify-content-center">
+        <section class="d-flex flex-column my-5 border-bottom border-dark target-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in facilisis turpis. Donec euismod
+                tempor ornare.
+                Duis quis finibus libero, ac iaculis orci. Suspendisse elementum blandit placerat. Nullam molestie velit
+                dolor, eget
+                rutrum velit fermentum vitae. Mauris non nulla quis est lacinia elementum. Nunc suscipit dui pretium
+                bibendum
+                varius.</p>
+            <p>Sed eros lacus, aliquet eget porta finibus, rutrum consequat augue. Morbi non consectetur velit. Nulla
+                leo
+                mauris, sagittis nec sagittis in, congue viverra magna. Nulla aliquam ligula massa, fringilla lacinia ex
+                semper vel.
+                Donec rhoncus consectetur vestibulum. Maecenas dictum tincidunt posuere. Etiam id lectus enim. Mauris
+                blandit nunc
+                non nunc tincidunt accumsan. In et elit magna.</p>
+            <p>Sed arcu nisi, hendrerit eget velit eget, dapibus faucibus felis. Nunc lacinia luctus lorem at facilisis.
+                Integer
+                feugiat felis at nulla maximus volutpat. Quisque facilisis dui non ornare laoreet. Etiam varius
+                condimentum nisi sed
+                placerat. Etiam nibh nunc, efficitur vitae magna in, pretium sodales nisi. Sed lacinia libero nec mollis
+                mollis.
+                Integer vulputate cursus purus, non consectetur ante condimentum eu.</p>
+            <p>Curabitur eu ipsum at tellus iaculis tempus sit amet id augue. Proin nec metus dignissim, dictum enim
+                eget,
+                vestibulum velit. Proin ornare tellus at dolor placerat, nec gravida eros fringilla. Mauris tincidunt
+                tempor
+                bibendum.</p>
+            <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc tempus est et
+                velit ullamcorper, eget faucibus magna tempus. Proin sollicitudin ultricies leo, eget finibus nulla
+                mollis quis.</p>
+            <p>Nam orci nisl, tristique quis tincidunt eu, viverra nec tortor. Fusce interdum at dui a auctor. Maecenas
+                felis
+                magna, tempor dignissim pharetra ac, semper quis felis. Donec in efficitur risus. Suspendisse quis ex
+                quam. Lorem
+                ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mi a tortor vulputate dictum in id dui.
+                Morbi at rutrum
+                sem.</p>
+            <h2>Insert the Content Before This</h2>
+            <p>Pellentesque ac tortor consequat lacus pellentesque rutrum sed ac erat. Vivamus consectetur placerat
+                diam, a
+                dictum sem gravida nec. Sed lobortis augue metus, ac egestas neque tempus ut. Duis at nunc non ligula
+                fermentum
+                commodo at quis nisl. Praesent dictum egestas tellus scelerisque tincidunt. Vivamus sed leo feugiat erat
+                dictum
+                sodales ac vel sem. Donec ante arcu, imperdiet vitae sagittis nec, ultrices vitae eros.</p>
+            <p>Praesent vel pretium nisl. Donec erat mi, euismod ut odio ut, porttitor commodo libero. Donec elit erat,
+                efficitur
+                sit amet eros ac, bibendum congue diam. Nulla facilisi. In lectus lectus, ultricies ut sagittis non,
+                vulputate vitae
+                orci. Maecenas id ipsum velit. Aenean eleifend mi eget tempus commodo. Fusce ullamcorper est et libero
+                blandit, id
+                laoreet tellus porttitor.</p>
+
+        </section>
+    </main>
+
+    <section class="pt-5 pb-5 bg-light d-none injectable-content">
+        <div class="container">
+            <div class="row d-flex">
+                <div class="col-md-12">
+                    <div class="card shadow-sm">
+                        <div class="card-body text-center p-5">
+                            <h3 class="pb-2 h3 mt-1 display-5 font-weight-bold text-uppercase text-primary">Call To
+                                Action
+                                Headline</h3>
+                            <p class="lead font-weight-bold">Call to action text This is some text and button within a
+                                call-to-action
+                                text block.</p>
+                            <a href="#" class="btn btn-xs btn-round btn-lg btn-danger btn-rised ml-md-4 mt-md-4">Call To
+                                Action
+                                Button</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function createFragment( htmlStr ) {
+
+            var frag = document.createDocumentFragment(),
+                temp = document.createElement( 'div' );
+
+            temp.innerHTML = htmlStr;
+
+            while ( temp.firstChild ) {
+                frag.appendChild( temp.firstChild );
+            }
+
+            return frag;
+        }
+
+        var target = document.querySelector( ".target-content" ),
+            h2 = target.querySelector( "h2" ),
+            source = document.querySelector( ".injectable-content" );
+
+        h2.parentNode.insertBefore( source, h2 );
+
+        source = target.querySelector( ".injectable-content" );
+
+        source.classList.remove( "d-none" );
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="/">
+
+    <title>Using Geolocation getCurrentPosition</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="css/libs/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container mx-5 px-5 position-container">
+        <div class="row">
+            <label>accuracy:</label><span class="accuracy ml-3"></span> </div>
+        <div class="row"><label>altitude:</label><span class="altitude ml-3"></span></div>
+        <div class="row"><label>altitudeAccuracy:</label><span class="altitudeAccuracy ml-3"></span></div>
+        <div class="row"><label>heading:</label><span class="heading ml-3"></span></div>
+        <div class="row"><label>latitude:</label><span class="latitude ml-3"></span></div>
+        <div class="row"><label>longitude:</label><span class="longitude ml-3"></span></div>
+        <div class="row"><label>speed:</label><span class="speed ml-3"></span></div>
+        <div class="row"></div>
+    </div>
+
+
+    <script>
+        if ( "geolocation" in navigator ) {
+
+            navigator.geolocation.getCurrentPosition( setCurrentPosition,
+                positionError, {
+                    enableHighAccuracy: false,
+                    timeout: 15000,
+                    maximumAge: 0
+                } );
+
+        }
+
+        function positionError( error ) {
+
+            switch ( error.code ) {
+                case error.PERMISSION_DENIED:
+                    console.error( "User denied the request for Geolocation." );
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    console.error( "Location information is unavailable." );
+                    break;
+                case error.TIMEOUT:
+                    console.error( "The request to get user location timed out." );
+                    break;
+                case error.UNKNOWN_ERROR:
+                    console.error( "An unknown error occurred." );
+                    break;
+            }
+
+        }
+
+        function setCurrentPosition( position ) {
+
+            document.querySelector( '.accuracy' ).innerHTML = position.coords.accuracy;
+            document.querySelector( '.altitude' ).innerHTML = position.coords.altitude;
+            document.querySelector( '.altitudeAccuracy' ).innerHTML = position.coords.altitudeAccuracy;
+            document.querySelector( '.heading' ).innerHTML = position.coords.heading;
+            document.querySelector( '.latitude' ).innerHTML = position.coords.latitude;
+            document.querySelector( '.longitude' ).innerHTML = position.coords.longitude;
+            document.querySelector( '.speed' ).innerHTML = position.coords.speed;
+
+        }
+    </script>
+</body>
+
+</html>

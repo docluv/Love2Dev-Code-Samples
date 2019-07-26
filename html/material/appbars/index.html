@@ -171,6 +171,28 @@
             text-decoration: none;
         }
 
+        .appbar-child-nav-left {
+            position: absolute;
+            left: 15px;
+        }
+
+        .appbar-child-nav-right {
+            position: absolute;
+            right: 15px;
+        }
+
+        [class*='appbar-child-nav-'] {
+            margin-top: 6px;
+        }
+
+        [class*='appbar-child-nav-'] .fas,
+        [class*='appbar-child-nav-'] .far {
+            text-align: center;
+            font-size: 1.25em;
+            color: #fff;
+            line-height: 1.5em;
+            margin-top: 6px;
+        }
 
         @media(min-width: 992px) {
 
@@ -186,9 +208,21 @@
 
 <body>
 
-    <nav class="appbar appbar-top appbar-center-fab"></nav>
-    <button class="btn-new-order btn-floating btn-md btn-secondary btn-floating-br shadow"><i
-            class="fas fa-plus"></i></button>
+    <nav class="appbar appbar-top appbar-center-fab">
+        <div class="appbar-child-nav-left">
+            <span class="nav-back">
+                <i class="fas fa-arrow-left"></i>
+            </span>
+        </div>
+        <div class="appbar-child-nav-right">
+            <span class="nav-toggle-menu">
+                <i class="fas fa-ellipsis-v"></i>
+            </span>
+        </div>
+
+    </nav>
+    <!-- <button class="btn-new-order btn-floating btn-md btn-secondary btn-floating-br shadow"><i
+            class="fas fa-plus"></i></button> -->
 
     <main class="main-content">
 
@@ -199,6 +233,7 @@
 
     <nav class="appbar appbar-bottom appbar-right-fab">
         <ul>
+            <li><a href="#"><i class="fas fa-bars"></i></a></li>
             <li><a href="#"><i class="fas fa-star"></i></a></li>
             <li><a href="#"><i class="far fa-clone"></i></a></li>
             <li><a href="#"><i class="fas fa-search"></i></a></li>

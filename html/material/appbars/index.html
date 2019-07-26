@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Material Design Top & Bottom AppBars</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../../css/libs/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../css/libs/all.min.css" rel="stylesheet" type="text/css">
+
+    <style>
+        html,
+        body {
+            height: 100vh;
+            width: 100%;
+            overflow-y: scroll;
+        }
+
+        body {
+            margin: 0;
+            background-color: #cdcdcd;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            display: block;
+        }
+
+
+        .appbar {
+            position: fixed;
+            right: 0;
+            left: 0;
+            height: 56px;
+            background-color: transparent;
+            overflow: hidden;
+        }
+
+        .appbar-top {
+            top: 0;
+        }
+
+
+        .appbar-bottom {
+            bottom: 0;
+        }
+
+        .appbar::before {
+            content: '';
+            position: absolute;
+            box-shadow: 0px 0px 0px 5000px rebeccapurple;
+        }
+
+        .appbar-bottom.appbar-right-fab::before,
+        .appbar-bottom.appbar-center-fab::before,
+        .appbar-top.appbar-right-fab::before,
+        .appbar-top.appbar-center-fab::before {
+            top: -32px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 1000px;
+            width: 64px;
+            height: 64px;
+        }
+
+        .appbar-top.appbar-right-fab::before,
+        .appbar-top.appbar-center-fab::before {
+            top: 32px;
+        }
+
+        .appbar-bottom.appbar-right-fab+.btn-floating,
+        .appbar-bottom.appbar-center-fab+.btn-floating,
+        .appbar-top.appbar-right-fab+.btn-floating,
+        .appbar-top.appbar-center-fab+.btn-floating {
+            position: fixed;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            background-color: #fff;
+            border: none;
+            z-index: 999;
+        }
+
+        .appbar-top.appbar-right-fab+.btn-floating,
+        .appbar-top.appbar-center-fab+.btn-floating {
+            bottom: auto;
+            top: 28px;
+        }
+
+        .appbar-right-fab::before {
+            left: 90%;
+        }
+
+        .appbar-right-fab+.btn-floating {
+            left: 90%;
+        }
+
+        @media(min-width: 992px) {
+
+            .appbar-right-fab::before {
+                left: 95%;
+            }
+
+            .appbar-right-fab+.btn-floating {
+                left: 95%;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="appbar appbar-top appbar-center-fab"></nav>
+    <button class="btn-new-order btn-floating btn-md btn-secondary btn-floating-br"><i class="fas fa-plus"></i></button>
+
+    <main class="main-content">
+
+
+
+    </main>
+
+
+    <nav class="appbar appbar-bottom appbar-center-fab">
+    </nav>
+    <button class="btn-new-order btn-floating btn-md btn-secondary btn-floating-br"><i class="fas fa-plus"></i></button>
+
+</body>
+
+</html>

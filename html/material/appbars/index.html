@@ -136,6 +136,16 @@
             font-size: 2em;
         }
 
+        /* should be invoked when 
+        
+            - input field in focus so keyboard can be seen 
+            - when navigation drawer displayed
+
+        */
+        .hide-appbar .appbar-bottom {
+            display: none;
+        }
+
         @media(min-width: 992px) {
 
             /* Material bottom naivgation should not be displayed on large screens */

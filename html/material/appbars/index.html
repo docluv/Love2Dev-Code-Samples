@@ -62,16 +62,17 @@
             bottom: 0;
         }
 
-        .appbar::before {
+        .appbar::after {
             content: '';
             position: absolute;
+            z-index: -10;
             box-shadow: 0px 0px 0px 5000px rebeccapurple;
         }
 
-        .appbar-bottom.appbar-right-fab-inset::before,
-        .appbar-bottom.appbar-center-fab-inset::before,
-        .appbar-top.appbar-right-fab-inset::before,
-        .appbar-top.appbar-center-fab-inset::before {
+        .appbar-bottom.appbar-right-fab-inset::after,
+        .appbar-bottom.appbar-center-fab-inset::after,
+        .appbar-top.appbar-right-fab-inset::after,
+        .appbar-top.appbar-center-fab-inset::after {
             top: -32px;
             left: 50%;
             transform: translateX(-50%);
@@ -80,8 +81,8 @@
             height: 64px;
         }
 
-        .appbar-top.appbar-right-fab-inset::before,
-        .appbar-top.appbar-center-fab-inset::before {
+        .appbar-top.appbar-right-fab-inset::after,
+        .appbar-top.appbar-center-fab-inset::after {
             top: 32px;
         }
 
@@ -123,28 +124,53 @@
             top: 28px;
         }
 
-        .appbar-right-fab::before {
+        .appbar-top.appbar-right-fab::after,
+        .appbar-bottom.appbar-right-fab::after {
             left: 90%;
         }
 
-        .appbar-right-fab+.btn-floating {
+        .appbar-top.appbar-right-fab+.btn-floating,
+        .appbar-bottom.appbar-right-fab+.btn-floating {
             left: 90%;
         }
 
         .btn-floating .fas,
         .btn-floating .far {
-            font-size: 2em;
+            font-size: 1.25em;
         }
 
         /* should be invoked when 
         
             - input field in focus so keyboard can be seen 
             - when navigation drawer displayed
+            - possibly when list is being scrolled
 
         */
         .hide-appbar .appbar-bottom {
             display: none;
         }
+
+        .appbar ul,
+        .appbar ol {
+            list-style: none;
+            padding-left: 12px;
+        }
+
+        .appbar li {
+            display: inline-block;
+            margin: 3px 5px;
+            text-align: center;
+            font-size: 1.25em;
+            line-height: 48px;
+            padding-left: 0;
+            padding-right: 18px;
+        }
+
+        .appbar a {
+            color: #fff;
+            text-decoration: none;
+        }
+
 
         @media(min-width: 992px) {
 
@@ -171,7 +197,12 @@
     </main>
 
 
-    <nav class="appbar appbar-bottom appbar-center-fab">
+    <nav class="appbar appbar-bottom appbar-right-fab">
+        <ul>
+            <li><a href="#"><i class="fas fa-star"></i></a></li>
+            <li><a href="#"><i class="far fa-clone"></i></a></li>
+            <li><a href="#"><i class="fas fa-search"></i></a></li>
+        </ul>
     </nav>
     <button class="btn-new-order btn-floating btn-md btn-secondary btn-floating-br shadow"><i
             class="fas fa-plus"></i></button>

@@ -6,98 +6,38 @@
     <base href="/">
 
     <title>Web Development Demos</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="css/libs/bootstrap.min.css" rel="stylesheet" type="text/css">
 
     <style>
-        body {
-            padding: 10%;
+        * {
+            margin: 0;
+            padding: 0;
         }
 
-        p {
-            text-transform: capitalize;
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
         }
+
 
         #map_canvas {
-            margin: 0;
+            border: solid #33f 1px;
+            margin: 2%;
             padding: 0;
             height: 80%;
         }
     </style>
 
-    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyC36oVKdhBY20C-i3FvY3eOciuS7rsilio">
-    </script>
-
-    <script type="text/javascript">
-        var map,
-            watchId,
-            marker;
-
-        function initialize() {
-
-            if ( navigator.geolocation ) {
-                if ( navigator.geolocation.watchPosition ) {
-                    watchId = navigator.geolocation.watchPosition( setCurrentPosition );
-                } else {
-                    navigator.geolocation.getCurrentPosition( setCurrentPosition );
-                }
-            }
-
-        }
-
-        google.maps.event.addDomListener( window, 'load', initialize );
-
-        function setCurrentPosition( position ) {
-
-            var myOptions = {
-                zoom: 18,
-                center: new google.maps.LatLng( position.coords.latitude, position.coords.longitude ),
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-
-            if ( !map ) {
-
-                map = new google.maps.Map( document.getElementById( 'map_canvas' ), myOptions );
-
-            } else {
-                map.setCenter( new google.maps.LatLng( position.coords.latitude, position.coords.longitude,
-                    true ) );
-            }
-
-
-            document.querySelector( '.accuracy' ).innerHTML = position.coords.accuracy;
-            document.querySelector( '.altitude' ).innerHTML = position.coords.altitude;
-            document.querySelector( '.altitudeAccuracy' ).innerHTML = position.coords.altitudeAccuracy;
-            document.querySelector( '.heading' ).innerHTML = position.coords.heading;
-            document.querySelector( '.latitude' ).innerHTML = position.coords.latitude;
-            document.querySelector( '.longitude' ).innerHTML = position.coords.longitude;
-            document.querySelector( '.speed' ).innerHTML = position.coords.speed;
-
-            AddPushpin( new google.maps.LatLng( position.coords.latitude, position.coords.longitude, true ) );
-
-        }
-
-        function AddPushpin( latLong ) {
-
-            if ( !marker ) {
-
-                marker = new google.maps.Marker( {
-                    position: latLong,
-                    map: map
-                } );
-
-            } else {
-                marker.setPosition( latLong );
-            }
-
-        }
-    </script>
-
 </head>
 
 <body>
     <div id="map_canvas"></div>
-    <div>
+    <div class="container m-3 p-5">
         <label>accuracy:</label><span class="accuracy"></span><br />
         <label>altitude:</label><span class="altitude"></span><br />
         <label>altitudeAccuracy:</label><span class="altitudeAccuracy"></span><br />
@@ -107,6 +47,123 @@
         <label>speed:</label><span class="speed"></span><br />
         <a href="javascript/maps/bing/">Bing</a>
     </div>
+
+    <script type="text/javascript">
+        var map;
+
+        var pushPins = [ {
+            "Latitude": 42.175856,
+            "Longitude": -79.404594,
+            "price": "$499,999",
+            "url": "https://love2dev.com/pwa/add-to-homescreen/"
+        }, {
+            "Latitude": 42.184258,
+            "Longitude": -79.321094,
+            "price": "$799,999",
+            "url": "https://love2dev.com/blog/what-is-a-progressive-web-app/"
+        }, {
+            "Latitude": 42.150553,
+            "Longitude": -79.379587,
+            "price": "$999,999",
+            "url": "https://love2dev.com/restaurant/logo/"
+        } ];
+
+
+        function initMap() {
+
+            createMap();
+
+        }
+
+        //        google.maps.event.addDomListener( window, 'load', initialize );
+
+        function createMap() {
+
+            if ( !map ) {
+
+                map = new google.maps.Map( document.getElementById( 'map_canvas' ), {
+                    center: {
+                        lat: 42.150553,
+                        lng: -79.379587
+                        // lat: 42.0973725174755,
+                        // lng: -79.2837372434065
+                    },
+                    zoom: 13
+                } );
+
+            } else {
+
+                map.setCenter( new google.maps.LatLng( {
+                        lat: 42.0973725174755,
+                        lng: -79.2837372434065
+                    },
+                    true ) );
+
+            }
+
+            for ( var index = 0; index < pushPins.length; index++ ) {
+
+                addPin( pushPins[ index ] );
+
+            }
+
+        }
+
+        function addPin( pin ) {
+
+            var marker = new google.maps.Marker( {
+                position: {
+                    lat: pin.Latitude,
+                    lng: pin.Longitude
+                },
+                icon: {
+                    path: "M20-20h-48v20h20l6 6 6-6h16z",
+                    text: pin.price,
+                    fillColor: "#FF0515",
+                    fillOpacity: 1,
+                    strokeColor: '',
+                    strokeWeight: 0,
+                    labelOrigin: new google.maps.Point( -5, -10 )
+                },
+                label: {
+                    text: pin.price,
+                    color: 'white',
+                    fontSize: '9px',
+                    fontWeight: 'bold'
+                },
+                map_icon_label: '<span class="map-icon map-icon-point-of-interest"></span>',
+                map: map
+            } );
+
+            var infowindow = new google.maps.InfoWindow( {
+                content: '<div class="m-0 p-0"><img style="width:60px;" class="m-0 p-0" src="https://love2dev.com/img/httphandlers-book-cover.jpg" alt="HttpHandlers" /></div>'
+            } );
+
+            marker.addListener( "click", function () {
+                location.href = pin.url;
+            } );
+
+
+            marker.addListener( "mouseover", function () {
+                infowindow.open( map, marker );
+            } );
+
+            marker.addListener( "mouseout", function () {
+
+                setTimeout( function () {
+
+                    infowindow.close( map, marker );
+
+                }, 1000 );
+
+            } );
+
+        }
+    </script>
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC36oVKdhBY20C-i3FvY3eOciuS7rsilio&callback=initMap">
+    </script>
+
 </body>
 
 </html>

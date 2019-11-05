@@ -103,9 +103,33 @@
 
             for ( var index = 0; index < pushPins.length; index++ ) {
 
-                addPin( pushPins[ index ] );
+                pushPins[ index ] = addPin( pushPins[ index ] );
 
             }
+
+            setTimeout( function () {
+
+                pushPins[ 0 ].infowindow.open( map, pushPins[ 0 ].marker );
+
+                setTimeout( function () {
+
+                    pushPins[ 0 ].infowindow.close();
+
+                }, 5000 );
+
+            }, 5000 );
+
+            setTimeout( function () {
+
+                pushPins[ 1 ].infowindow.open( map, pushPins[ 1 ].marker );
+
+                setTimeout( function () {
+
+                    pushPins[ 1 ].infowindow.close();
+
+                }, 5000 );
+
+            }, 10000 );
 
         }
 
@@ -139,10 +163,12 @@
                 content: '<div class="m-0 p-0"><img style="width:60px;" class="m-0 p-0" src="https://love2dev.com/img/httphandlers-book-cover.jpg" alt="HttpHandlers" /></div>'
             } );
 
+            pin.infowindow = infowindow;
+            pin.marker = marker;
+
             marker.addListener( "click", function () {
                 location.href = pin.url;
             } );
-
 
             marker.addListener( "mouseover", function () {
                 infowindow.open( map, marker );
@@ -152,11 +178,13 @@
 
                 setTimeout( function () {
 
-                    infowindow.close( map, marker );
+                    infowindow.close();
 
                 }, 1000 );
 
             } );
+
+            return pin;
 
         }
     </script>

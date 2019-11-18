@@ -1,0 +1,148 @@
+`
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Love2Dev - GDPR</title>
+    <link href="../../css/libs/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/libs/animate.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            color: #000;
+        }
+
+        .main-container {
+            margin: 2em 0 0 2em;
+            width: calc(100vw - 4em);
+            height: calc(100vh - 4em);
+        }
+
+        .gdpr-prompt {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            z-index: 9999;
+            color: #fff;
+            display: none;
+            animation-name: bounceInUp;
+            animation-duration: 1500ms;
+            animation-fill-mode: both;
+            align-items: center;
+            font-size: 8px;
+        }
+
+        .gdpr-prompt .btn {
+            align-self: flex-start;
+        }
+
+        .gdpr-prompt::after {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            top: 0;
+            left: 0;
+            background-color: #000;
+            content: " ";
+            opacity: .65;
+            z-index: -100;
+        }
+
+        @media (min-width: 768px) {
+
+            .gdpr-prompt {
+                width: 75%;
+            }
+
+        }
+
+        @media(min-width: 992px) {
+
+            .gdpr-prompt {
+                width: 60%;
+                font-size: 1em;
+            }
+        }
+
+        @media(min-width: 1200px) {
+
+            .gdpr-prompt {
+                width: 33%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="d-flex main-container">
+        <h1>GDPR - Test</h1>
+    </main>
+    <div class="gdpr-prompt py-3 px-4">
+
+        <p class="col-8 col-lg-9 col-xl-10 mr-1">We use cookies to give you the best experience possible. By
+            continuing, we'll assume
+            you're
+            cool with our
+            cookie
+            policy.
+        </p>
+        <button class="btn btn-danger btn-gdpr-accept">Accept</button>
+    </div>
+
+    <script>
+        var showgdpr = localStorage.getItem( "gdpr" );
+
+        function showGDPR() {
+
+            var gdpr = document.querySelector( ".gdpr-prompt" ),
+                acceptBtn = document.querySelector( ".btn-gdpr-accept" );
+
+            if ( gdpr && acceptBtn ) {
+
+                setTimeout( function () {
+
+                    gdpr.style.display = "flex";
+
+                }, 2500 );
+
+                acceptBtn.addEventListener( "click", function () {
+
+                    localStorage.setItem( "gdpr", true );
+
+                    gdpr.style.display = "none";
+
+                    showgdpr = false;
+
+                } );
+
+            }
+
+        }
+
+        if ( !showgdpr ) {
+
+            showGDPR();
+
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+`
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Love2Dev - Add to Homescreen</title>
+    <link href="../../css/libs/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/libs/animate.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            color: #000;
+        }
+
+        .main-container {
+            margin: 2em 0 0 2em;
+            width: calc(100vw - 4em);
+            height: calc(100vh - 4em);
+        }
+
+        .a2hs-prompt {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            z-index: 9999;
+            color: #fff;
+            display: none;
+            animation-name: bounceInUp;
+            animation-duration: 1500ms;
+            animation-fill-mode: both;
+            align-items: center;
+            font-size: 8px;
+        }
+
+        .a2hs-prompt .btn {
+            align-self: flex-start;
+        }
+
+        .a2hs-prompt::after {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            top: 0;
+            left: 0;
+            background-color: #000;
+            content: " ";
+            opacity: .65;
+            z-index: -100;
+        }
+
+        @media (min-width: 768px) {
+
+            .a2hs-prompt {
+                width: 75%;
+            }
+
+        }
+
+        @media(min-width: 992px) {
+
+            .a2hs-prompt {
+                width: 60%;
+                font-size: 1em;
+            }
+        }
+
+        @media(min-width: 1200px) {
+
+            .a2hs-prompt {
+                width: 33%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="d-flex main-container">
+        <h1>a2hs - Test</h1>
+    </main>
+    <div class="a2hs-prompt py-3 px-4">
+
+        <p class="col-8 col-lg-9 col-xl-10 mr-1">We use cookies to give you the best experience possible. By
+            continuing, we'll assume
+            you're
+            cool with our
+            cookie
+            policy.
+        </p>
+        <button class="btn btn-danger btn-a2hs-accept">Accept</button>
+    </div>
+
+    <script>
+        var gdpr = localStorage.getItem( "gdpr" ),
+            showAdd2hs = localStorage.getItem( "a2hs" );
+
+        function showa2hs() {
+
+            var a2hs = document.querySelector( ".a2hs-prompt" ),
+                acceptBtn = document.querySelector( ".btn-a2hs-accept" );
+
+            if ( a2hs && acceptBtn ) {
+
+                setTimeout( function () {
+
+                    a2hs.style.display = "flex";
+
+                }, 2500 );
+
+                acceptBtn.addEventListener( "click", function () {
+
+                    localStorage.setItem( "a2hs", true );
+
+                    a2hs.style.display = "none";
+
+                    showa2hs = false;
+
+                } );
+
+            }
+
+        }
+
+        if ( !showAdd2hs && gdpr ) {
+
+            showa2hs();
+
+        }
+    </script>
+
+</body>
+
+</html>

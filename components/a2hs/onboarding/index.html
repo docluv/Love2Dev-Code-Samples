@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Love2Dev - Add to Homescreen</title>
+    <link href="../../../css/libs/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../css/libs/animate.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            color: #000;
+        }
+
+        .main-container {
+            margin: 2em 0 0 2em;
+            width: calc(100vw - 4em);
+            height: calc(100vh - 4em);
+        }
+
+
+        /* wizard progress bars */
+
+        .wizard-progress-bars {
+            list-style: none;
+            margin: 3px auto;
+        }
+
+        .progress-bar {
+            display: inline-block;
+            margin-left: 6px;
+            margin-right: 6px;
+            height: 2px;
+            width: 24px;
+            background-color: #01AFC8;
+            border-radius: 2px;
+            opacity: 0.4;
+        }
+
+        .progress-bar.active {
+            opacity: 1;
+        }
+
+        /* end wizard progress bars */
+    </style>
+</head>
+
+<body>
+
+    <main class="d-flex main-container">
+        <h1>a2hs - Test</h1>
+        <div class="a2hs-prompt container d-flex justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="welcome-panel form-panel active row d-flex align-items-start col-12 no-gutters"
+                    role="tabpanel">
+                    <div class="row py-2 mb-1 mx-auto col-12 d-flex justify-content-center">
+                        <h1>Welcome!</h1>
+                    </div>
+                    <div class="row py-2 mb-0 col-12 px-0 d-flex justify-content-center text-white no-gutters">
+                        <p class="text-center">This is a guided onboarding wizard</p>
+                    </div>
+                    <div class="row py-2 my-5 col-12 px-0 no-gutters">
+                        <div class="row w-100 mx-auto">
+                            <button type="button"
+                                class="btn btn-white btn-rounded btn-lg btn-start-panel px-5 py-3 mx-auto btn-wizard"
+                                wizard-target=".ipad-panel" tabindex="10">Next</button>
+                        </div>
+                        <div class="row w-100 mx-auto">
+                            <a href="#" class="btn btn-link-white mx-auto ">Close</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="ipad-panel form-panel row d-none align-items-start col-12 no-gutters" role="tabpanel">
+                    <div class="row py-2 mb-1 mx-auto col-12 d-flex justify-content-center">
+                        <h1>For an iPad</h1>
+                        <p class="text-center">You will need to mannually add your PWA to the homescreen</p>
+                    </div>
+                    <div class="row py-2 mb-0 col-12 px-0 d-flex justify-content-center text-white no-gutters">
+                        <img src="components/a2hs/onboarding/safari-ipad-share-a2hs.png" alt="iPad add to homescreen">
+                    </div>
+                    <div class="row py-2 my-5 col-12 px-0 no-gutters">
+                        <div class="row w-100 mx-auto">
+                            <button type="button"
+                                class="btn btn-white btn-rounded btn-lg btn-start-panel px-5 py-3 mx-auto btn-wizard"
+                                wizard-target=".ipad-panel" tabindex="10">Next</button>
+                        </div>
+                        <div class="row w-100 mx-auto">
+                            <a href="#" class="btn btn-link-white mx-auto ">Close</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+    <script src="components/a2hs/onboarding/component.base.js"></script>
+    <script src="components/a2hs/onboarding/wizard.js"></script>
+    <script>
+        wizard.initialize();
+    </script>
+</body>
+
+</html>

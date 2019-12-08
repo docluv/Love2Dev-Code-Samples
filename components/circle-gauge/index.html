@@ -10,77 +10,7 @@
 
     <link href="css/libs/bootstrap.min.css" rel="stylesheet" />
 
-    <style>
-        .pie-container {
-            width: 100px;
-            height: 100px;
-            position: relative;
-        }
-
-        .right-pie,
-        .left-pie {
-            position: absolute;
-            z-index: 50;
-            top: 10px;
-            left: 10px;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background-color: #d13438;
-            clip: rect(0px, 300px, 0, 150px);
-            animation: fill ease-in-out 2s;
-        }
-
-        .left-pie {
-            clip: rect(300px, 150px, 300px, 0px);
-            animation: fillleft 3.9s ease-in-out;
-        }
-
-        .inner-pie {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background-color: #fff;
-            z-index: 100;
-            width: 95px;
-            height: 95px;
-            border-radius: 50%;
-            box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.2);
-        }
-
-        .back-pie {
-            position: absolute;
-            top: 9px;
-            left: 9px;
-            z-index: 1;
-            width: 100px;
-            height: 100px;
-            background-color: #fff;
-            border-radius: 50%;
-            box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
-        }
-
-        .gauge-value {
-            font-size: 36px;
-        }
-
-        @keyframes fill {
-            0% {
-                clip: rect(0px, 300px, 0, 150px);
-            }
-        }
-
-        @keyframes fillleft {
-            0% {
-                clip: rect(300px, 150px, 300px, 0px);
-            }
-
-            49% {
-                clip: rect(300px, 150px, 300px, 0px);
-            }
-
-        }
-    </style>
+    <link rel="stylesheet" href="components/circle-gauge/circle-gauge.css">
 
 </head>
 

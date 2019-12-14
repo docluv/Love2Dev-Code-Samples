@@ -19,69 +19,76 @@
             width: 100%;
             height: 100%;
             display: flex;
-position: relative;
+            position: relative;
             justify-content: center;
             align-items: center;
         }
 
-/*******************************
+        .modal {
+            background-color: orangered;
+            color: #fff;
+        }
+
+        /*******************************
 * MODAL AS LEFT/RIGHT SIDEBAR
 * Add "left" or "right" in modal parent div, after class="modal".
 * Get free snippets on bootpen.com
 *******************************/
-.modal.left .modal-dialog,
-.modal.right .modal-dialog {
-position: fixed;
-margin: auto;
-width: 320px;
-height: 100%;
-transform: translate3d(0%, 0, 0);
-}
+        .modal.left .modal-dialog,
+        .modal.right .modal-dialog {
+            position: fixed;
+            margin: auto;
+            width: 320px;
+            height: 100%;
+            transform: translate3d(0%, 0, 0);
+        }
 
-.modal.left .modal-content,
-.modal.right .modal-content {
-height: 100%;
-overflow-y: auto;
-}
+        .modal.left .modal-content,
+        .modal.right .modal-content {
+            height: 100%;
+            overflow-y: auto;
+        }
 
-.modal.left .modal-body,
-.modal.right .modal-body {
-padding: 15px 15px 80px;
-}
+        .modal.left .modal-body,
+        .modal.right .modal-body {
+            padding: 15px 15px 80px;
+        }
 
-/*Left*/
-.modal.left.fade .modal-dialog{
-left: -320px;
-transition: opacity 0.3s linear, left 0.3s ease-out;
-}
+        /*Left*/
+        .modal.left.fade .modal-dialog {
+            left: -320px;
+            transition: opacity 0.3s linear, left 0.3s ease-out;
+        }
 
-.modal.left.fade.in .modal-dialog{
-left: 0;
-}
+        .modal.left.fade.in .modal-dialog {
+            left: 0;
+        }
 
-/*Right*/
-.modal.right.fade .modal-dialog {
-right: -320px;
-transition: opacity 0.3s linear, right 0.3s ease-out;
-}
+        /*Right*/
+        .modal.right.fade .modal-dialog {
+            right: -320px;
+            transition: opacity 0.3s linear, right 0.3s ease-out;
+        }
 
-.modal.right.fade.in .modal-dialog {
-right: 0;
-}
+        .modal.right.fade.in .modal-dialog {
+            right: 0;
+        }
 
-/* ----- MODAL STYLE ----- */
-.modal-content {
-border-radius: 0;
-border: none;
-}
+        /* ----- MODAL STYLE ----- */
+        .modal-content {
+            border-radius: 0;
+            border: none;
+        }
 
-.modal-header {
-border-bottom-color: #EEEEEE;
-background-color: #FAFAFA;
-}
+        .modal-header {
+            border-bottom-color: #EEEEEE;
+            background-color: #FAFAFA;
+        }
 
-
-</style>
+        .modal.show {
+            display: block;
+        }
+    </style>
 
 </head>
 
@@ -94,7 +101,8 @@ background-color: #FAFAFA;
                 <div class="modal-content">
 
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="myModalLabel2">Right Sidebar</h4>
                     </div>
 
@@ -112,8 +120,9 @@ background-color: #FAFAFA;
     </main>
 
     <script>
+        var $modal = document.querySelector( ".modal" );
 
-
+        $modal.classList.add( "show" );
     </script>
 
 </body>

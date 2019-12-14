@@ -1,4 +1,3 @@
-`
 <!DOCTYPE html>
 <html>
 
@@ -52,6 +51,14 @@
             align-self: flex-start;
         }
 
+        .a2hs-prompt a.btn-link,
+        .a2hs-prompt a.btn-link:hover,
+        .a2hs-prompt .btn-link,
+        .a2hs-prompt .btn-link:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+
         .a2hs-prompt::after {
             position: absolute;
             bottom: 0;
@@ -83,7 +90,7 @@
         @media(min-width: 1200px) {
 
             .a2hs-prompt {
-                width: 33%;
+                width: 40%;
             }
         }
     </style>
@@ -94,16 +101,13 @@
     <main class="d-flex main-container">
         <h1>a2hs - Test</h1>
     </main>
-    <div class="a2hs-prompt py-3 px-4">
-
-        <p class="col-8 col-lg-9 col-xl-10 mr-1">We use cookies to give you the best experience possible. By
-            continuing, we'll assume
-            you're
-            cool with our
-            cookie
-            policy.
+    <div class="a2hs-prompt py-3 px-4 d-flex">
+        <p class="col-6 mr-1">Install Love2Dev for quick, easy access from your homescreen or start menu.
         </p>
-        <button class="btn btn-danger btn-a2hs-accept">Accept</button>
+        <div class="col-6 d-flex justify-content-between align-items-center">
+            <button class="btn btn-link btn-a2hs-cancel mr-1">No Thanks</button>
+            <button class="btn btn-danger btn-a2hs-accept">Install?</button>
+        </div>
     </div>
 
     <script>

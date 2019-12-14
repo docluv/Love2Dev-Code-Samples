@@ -44,11 +44,11 @@
     function selectElements() {
 
         $container = document.querySelector( settings.circles.selectors.containerCSS );
-        $right = document.querySelector( settings.circles.selectors.rightCSS );
-        $left = document.querySelector( settings.circles.selectors.leftCSS );
-        $innerCircle = document.querySelector( settings.circles.selectors.innerCircleCSS );
-        $backPie = document.querySelector( settings.circles.selectors.backPieCSS );
-        $gaugevalue = document.querySelector( settings.circles.selectors.gaugevalue );
+        $right = $container.querySelector( settings.circles.selectors.rightCSS );
+        $left = $container.querySelector( settings.circles.selectors.leftCSS );
+        $innerCircle = $container.querySelector( settings.circles.selectors.innerCircleCSS );
+        $backPie = $container.querySelector( settings.circles.selectors.backPieCSS );
+        $gaugevalue = $container.querySelector( settings.circles.selectors.gaugevalue );
         return Promise.resolve();
 
     }
@@ -59,7 +59,9 @@
             leftValue = 1,
             rightValue = percent;
 
-        $gaugevalue.innerText = ( percent * 50 ) + "%";
+        percent = percent.toFixed( 2 );
+
+        $gaugevalue.innerText = ( percent * 50 ).toFixed( 2 ) + "%";
 
         if ( percent > 1 ) {
             leftValue = 1 - ( percent - 1 );

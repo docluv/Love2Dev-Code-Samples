@@ -1,0 +1,45 @@
+<form>
+    <div class="md-form my-0">
+        <input id="firstName" name="firstName" tabindex="10" />
+        <label for="firstName">First Name</label>
+    </div>
+    <div class="md-form my-0"> <input id="lastName" name="lastName" tabindex="20" />
+        <label for="lastName">Last Name</label>
+    </div>
+    <div class="md-form my-0" id="lihaveEmail">
+        <input id="haveEmail" name="haveEmail" type="checkbox" tabindex="30" checked />
+        <label for="haveEmail">Do You Have An E-Mail?</label>
+    </div>
+    <div class="md-form my-0" id="liEmail">
+        <input id="email" name="email" tabindex="40" />
+        <label for="email">E-Mail</label>
+    </div>
+    <div class="md-form my-0">
+        <button type="submit" id="btnSubmit" tabindex="100">Save</button>
+    </div>
+</form>
+
+
+<script>
+    $( "#haveEmail" ).check( toggleEmail );
+
+    function toggleEmail( value ) {
+
+        if ( !value.checked ) {
+
+            $( "#liEmail" ).remove();
+
+        } else {
+
+            $( "#lihaveEmail" )
+                .after(
+                    "<div class='md-form my-0' id='liEmail'><label for='email'>E-Mail</label>" +
+                    "<input id='email' name='email' tabindex='40'></input></div>"
+                );
+
+        }
+
+        $( "#haveEmail" ).focus();
+
+    }
+</script>

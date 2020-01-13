@@ -7,7 +7,7 @@
         <label for="lastName">Last Name</label>
     </div>
     <div class="md-form my-0" id="lihaveEmail">
-        <input id="haveEmail" name="haveEmail" type="checkbox" tabindex="30" checked />
+        <input id="haveEmail" name="haveEmail" type="checkbox" tabindex="30" checked="true" />
         <label for="haveEmail">Do You Have An E-Mail?</label>
     </div>
     <div class="md-form my-0" id="liEmail">
@@ -21,25 +21,49 @@
 
 
 <script>
-    $( "#haveEmail" ).check( toggleEmail );
+    var $emailCB = document.querySelector( "#haveEmail" ),
+        $email = document.querySelector( "#liEmail" ),
+        $ihaveEmail = document.querySelector( "#lihaveEmail" );
 
-    function toggleEmail( value ) {
+    $emailCB.addEventListener( "change", toggleEmail );
 
-        if ( !value.checked ) {
+    function toggleEmail( e ) {
 
-            $( "#liEmail" ).remove();
+        e.preventDefault();
+
+        if ( !$emailCB.checked ) {
+
+            remove( $email );
 
         } else {
 
-            $( "#lihaveEmail" )
-                .after(
-                    "<div class='md-form my-0' id='liEmail'><label for='email'>E-Mail</label>" +
-                    "<input id='email' name='email' tabindex='40'></input></div>"
-                );
+            var $x = document.createElement( 'div' );
+
+            $x.classList.add( "md-form", "my-0" );
+            $x.id = "liEmail";
+
+            $x.innerHTML =
+                "<label for='email'>E-Mail</label><input id='email' name='email' tabindex='40'></input></div>";
+
+            insertAfter( $x, $ihaveEmail );
+
+            $email = document.querySelector( "#liEmail" );
 
         }
 
-        $( "#haveEmail" ).focus();
+        $emailCB.focus();
+
+    }
+
+    function remove( ele ) {
+
+        ele.parentElement.removeChild( ele );
+
+    }
+
+    function insertAfter( newNode, referenceNode ) {
+
+        referenceNode.parentNode.insertBefore( newNode, referenceNode.nextSibling );
 
     }
 </script>

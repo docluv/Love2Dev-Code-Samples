@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <base href="/">
     <meta charset="utf-8">
     <base href="/">
 
@@ -153,15 +154,23 @@
     </style>
 
     <link href="css/header-bar.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="favicon.ico" rel="shortcut icon">
+    <link rel="icon" type="image/jpg" href="meta/favicon-16x16.jpg" sizes="16x16">
+    <link rel="icon" type="image/jpg" href="meta/favicon-32x32.jpg" sizes="32x32">
+    <link rel="icon" type="image/jpg" href="meta/favicon-96x96.jpg" sizes="96x96">
+    <meta name="theme-color" content="#3c3c42">
+    <link rel="manifest" href="manifest.json">
 </head>
 
 <body class=" mediterranean-cuisine">
     <div class="d-flex flex-row col-sm-12 header-bar bg-primary text-white fixed-top">
-        <div class="d-flex flex-row col-sm-12 header-bar bg-primary text-white fixed-top justify-content-end align-items-center">
+        <div
+            class="d-flex flex-row col-sm-12 header-bar bg-primary text-white fixed-top justify-content-end align-items-center">
             <div class="btn btn-logout btn-link text-white">logout</div>
             <div class="dropdown">
-                <div class="profile-avatar dropdown-toggle" id="avatarDropDownBtn" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
+                <div class="profile-avatar dropdown-toggle" id="avatarDropDownBtn" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
                     <img src="img/avtar-8.jpg" alt="John Smith">
                 </div>
                 <div class="dropdown-menu" aria-labelledby="avatarDropDownBtn">
@@ -232,6 +241,7 @@
 
         }
     </script>
+    <script src="js/register.js"></script>
 </body>
 
 </html>

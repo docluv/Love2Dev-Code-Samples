@@ -3,6 +3,7 @@
 <html>
 
 <head>
+    <base href="/">
     <title>HTML Demos - The Checkbox</title>
 
     <style>
@@ -90,6 +91,13 @@
             margin-left: 10px;
         }
     </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="favicon.ico" rel="shortcut icon">
+    <link rel="icon" type="image/jpg" href="meta/favicon-16x16.jpg" sizes="16x16">
+    <link rel="icon" type="image/jpg" href="meta/favicon-32x32.jpg" sizes="32x32">
+    <link rel="icon" type="image/jpg" href="meta/favicon-96x96.jpg" sizes="96x96">
+    <meta name="theme-color" content="#3c3c42">
+    <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
@@ -99,7 +107,7 @@
         <textarea name="action-log" id="action-log" cols="30" rows="10"></textarea>
 
         <form>
-            
+
             <div class="form-row">
                 <input type="checkbox" id="subscribeNews" name="subscribe" value="newsletter">
                 <label for="subscribeNews">Subscribe to newsletter?</label>
@@ -131,31 +139,31 @@
             </fieldset>
 
             <fieldset>
-                    <legend>Pick Your Interests</legend>
-        
-                    <div class="child-checkboxes">
-                        <div class="form-row">
-                            <input type="checkbox" id="jsinterest" name="Interest" value="javascript">
-                            <label for="jsinterest">JavaScript</label>
-                        </div>
-                        <div class="form-row">
-                            <input type="checkbox" id="htmlinterest" name="Interest" value="html">
-                            <label for="htmlinterest">HTML</label>
-                        </div>
-                        <div class="form-row">
-                            <input type="checkbox" id="cssinterest" name="Interest" value="css">
-                            <label for="cssinterest">CSS</label>
-                        </div>
-                        <div class="form-row">
-                            <input type="checkbox" id="pwainterest" name="Interest" value="pwa">
-                            <label for="pwainterest">Progressive Web Apps</label>
-                        </div>
-                        <div class="form-row">
-                            <button type="submit" id="btnInterest">Submit</button>
-                        </div>
+                <legend>Pick Your Interests</legend>
+
+                <div class="child-checkboxes">
+                    <div class="form-row">
+                        <input type="checkbox" id="jsinterest" name="Interest" value="javascript">
+                        <label for="jsinterest">JavaScript</label>
                     </div>
-                </fieldset>
-    
+                    <div class="form-row">
+                        <input type="checkbox" id="htmlinterest" name="Interest" value="html">
+                        <label for="htmlinterest">HTML</label>
+                    </div>
+                    <div class="form-row">
+                        <input type="checkbox" id="cssinterest" name="Interest" value="css">
+                        <label for="cssinterest">CSS</label>
+                    </div>
+                    <div class="form-row">
+                        <input type="checkbox" id="pwainterest" name="Interest" value="pwa">
+                        <label for="pwainterest">Progressive Web Apps</label>
+                    </div>
+                    <div class="form-row">
+                        <button type="submit" id="btnInterest">Submit</button>
+                    </div>
+                </div>
+            </fieldset>
+
 
             <fieldset>
                 <legend>Choose At Least Two Interests</legend>
@@ -193,55 +201,55 @@
     </main>
 
     <script>
-        var log = document.querySelector("#action-log");
+        var log = document.querySelector( "#action-log" );
 
-        var jsCheck = document.getElementById("javascriptChecked");
+        var jsCheck = document.getElementById( "javascriptChecked" );
 
-        jsCheck.setAttribute("checked", "checked");
+        jsCheck.setAttribute( "checked", "checked" );
 
-        function addToLog(value) {
+        function addToLog( value ) {
 
             log.value = log.value + '\n' + value;
 
         }
 
-        var btnSubscribe = document.getElementById("btnSubmitSubscribe");
+        var btnSubscribe = document.getElementById( "btnSubmitSubscribe" );
 
-        btnSubscribe.addEventListener("click", function (evt) {
+        btnSubscribe.addEventListener( "click", function ( evt ) {
 
             evt.preventDefault();
 
-            var subscribe = document.querySelector("[name=subscribe]");
+            var subscribe = document.querySelector( "[name=subscribe]" );
 
-            console.log(subscribe.value); //writes 'newsletter'
+            console.log( subscribe.value ); //writes 'newsletter'
 
-            addToLog("Did the user subscribe: " + subscribe.checked);
+            addToLog( "Did the user subscribe: " + subscribe.checked );
 
             return false;
 
-        });
+        } );
 
         function bindStateChanges() {
 
-            var interests = document.querySelectorAll("[name=interest");
+            var interests = document.querySelectorAll( "[name=interest" );
 
-            for (var index = 0; index < interests.length; index++) {
+            for ( var index = 0; index < interests.length; index++ ) {
 
-                interests[index].addEventListener("change", function (evt) {
-
-                    var checkbox = evt.target;
-
-                    addToLog(checkbox.value + " changed to " + checkbox.checked);
-
-                });
-
-                interests[index].addEventListener("input", function (evt) {
+                interests[ index ].addEventListener( "change", function ( evt ) {
 
                     var checkbox = evt.target;
 
-                    addToLog(checkbox.value + " input to " + checkbox.checked);
+                    addToLog( checkbox.value + " changed to " + checkbox.checked );
 
-                });
+                } );
+
+                interests[ index ].addEventListener( "input", function ( evt ) {
+
+                    var checkbox = evt.target;
+
+                    addToLog( checkbox.value + " input to " + checkbox.checked );
+
+                } );
 
             }
 
@@ -249,26 +257,26 @@
 
         function setupIndeterminate() {
 
-            var pickInterest = document.querySelectorAll("[name=pickInterest"),
-                parentInterest = document.getElementById("pickInterests");
+            var pickInterest = document.querySelectorAll( "[name=pickInterest" ),
+                parentInterest = document.getElementById( "pickInterests" );
 
-            for (var index = 0; index < pickInterest.length; index++) {
+            for ( var index = 0; index < pickInterest.length; index++ ) {
 
-                var cb = pickInterest[index];
+                var cb = pickInterest[ index ];
 
-                cb.addEventListener("change", function (evt) {
+                cb.addEventListener( "change", function ( evt ) {
 
                     var checked = 0;
 
-                    for (var j = 0; j < pickInterest.length; j++) {
+                    for ( var j = 0; j < pickInterest.length; j++ ) {
 
-                        if (pickInterest[j].checked) {
+                        if ( pickInterest[ j ].checked ) {
                             checked++;
                         }
 
                     }
 
-                    switch (checked) {
+                    switch ( checked ) {
                         case 0:
 
                             parentInterest.checked = false;
@@ -291,37 +299,37 @@
                             break;
                     }
 
-                });
+                } );
 
             }
 
         }
 
-        function validateInterest(evt) {
+        function validateInterest( evt ) {
 
             evt.preventDefault();
 
-            var mininterest = document.querySelectorAll("[name=mininterest]");
+            var mininterest = document.querySelectorAll( "[name=mininterest]" );
 
             var count = 0,
                 interests = [];
 
-            for (var i = 0; i < mininterest.length; i++) {
+            for ( var i = 0; i < mininterest.length; i++ ) {
 
-                if (mininterest[i].checked) {
+                if ( mininterest[ i ].checked ) {
                     count++;
-                    interests.push(mininterest[i].value);
+                    interests.push( mininterest[ i ].value );
                 }
 
             }
 
-            if (count > 1) {
+            if ( count > 1 ) {
 
-                addToLog("enough interests selected: " + interests);
+                addToLog( "enough interests selected: " + interests );
 
             } else {
 
-                addToLog("**NOT ENOUGH** interests selected: " + interests);
+                addToLog( "**NOT ENOUGH** interests selected: " + interests );
 
             }
 
@@ -329,15 +337,15 @@
 
         }
 
-        var btnInterest = document.getElementById("btnInterest");
+        var btnInterest = document.getElementById( "btnInterest" );
 
-        btnInterest.addEventListener("click", validateInterest);
+        btnInterest.addEventListener( "click", validateInterest );
 
         bindStateChanges();
         setupIndeterminate();
-
     </script>
 
+    <script src="js/register.js"></script>
 </body>
 
 </html>

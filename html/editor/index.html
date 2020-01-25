@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <base href="/">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/all.min.css" rel="stylesheet">
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <title>HTML Editor</title>
+
+    <style>
+        .body-wyswyg-editor {
+            border: 1px solid #000;
+            width: 100%;
+            min-height: 500px;
+        }
+
+        .fas {
+            color: #000;
+        }
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="favicon.ico" rel="shortcut icon">
+    <link rel="icon" type="image/jpg" href="meta/favicon-16x16.jpg" sizes="16x16">
+    <link rel="icon" type="image/jpg" href="meta/favicon-32x32.jpg" sizes="32x32">
+    <link rel="icon" type="image/jpg" href="meta/favicon-96x96.jpg" sizes="96x96">
+    <meta name="theme-color" content="#3c3c42">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+    <section class="d-flex m-2 p-2 justify-content-center align-items-center flex-column col-12">
+        <div class="form-group col-12">
+            <div class="btn-toolbar editor-toolbar d-flex flex-row flex-wrap" data-role="editor-toolbar"
+                data-target="#editor">
+                <div class="btn-group">
+                    <a class="btn btn-edit" data-edit="bold" title="" data-original-title="Bold (Ctrl/Cmd+B)">
+                        <i class="fas fa-bold"></i></a>
+                    <a class="btn btn-edit" data-edit="italic" title="" data-original-title="Italic (Ctrl/Cmd+I)">
+                        <i class="fas fa-italic"></i></a>
+                    <a class="btn btn-edit" data-edit="strikethrough" title="" data-original-title="Strikethrough"><i
+                            class="fas fa-strikethrough"></i></a>
+                    <a class="btn btn-edit" data-edit="underline" title=""
+                        data-original-title="Underline (Ctrl/Cmd+U)"><i class="fas fa-underline"></i></a>
+                </div>
+                <div class="btn-group">
+                    <a class="btn" data-edit="insertunorderedlist" title="" data-original-title="Bullet list"><i
+                            class="fas fa-list-ul"></i></a>
+                    <a class="btn" data-edit="insertorderedlist" title="" data-original-title="Number list"><i
+                            class="fas fa-list-ol"></i></a>
+                    <a class="btn" data-edit="outdent" title="" data-original-title="Reduce indent (Shift+Tab)"><i
+                            class="fas fa-indent-left"></i></a>
+                    <a class="btn" data-edit="indent" title="" data-original-title="Indent (Tab)"><i
+                            class="fas fa-indent-right"></i></a>
+                </div>
+                <div class="btn-group">
+                    <a class="btn" data-edit="justifyleft" title="" data-original-title="Align Left (Ctrl/Cmd+L)"><i
+                            class="fas fa-align-left"></i></a>
+                    <a class="btn" data-edit="justifycenter" title="" data-original-title="Center (Ctrl/Cmd+E)"><i
+                            class="fas fa-align-center"></i></a>
+                    <a class="btn" data-edit="justifyright" title="" data-original-title="Align Right (Ctrl/Cmd+R)"><i
+                            class="fas fa-align-right"></i></a>
+                    <a class="btn" data-edit="justifyfull" title="" data-original-title="Justify (Ctrl/Cmd+J)"><i
+                            class="fas fa-align-justify"></i></a>
+                </div>
+                <div class="btn-group">
+                    <a class="btn" data-edit="addlink" title="" data-original-title="Remove Hyperlink"><i
+                            class="fas fa-link"></i></a>
+                    <a class="btn" data-edit="unlink" title="" data-original-title="Remove Hyperlink"><i
+                            class="fas fa-unlink"></i></a>
+                </div>
+                <div class="btn-group">
+                    <a class="btn" title="" id="pictureBtn"
+                        data-original-title="Insert picture (or just drag &amp; drop)"><i class="far fa-image"></i></a>
+                </div>
+                <div class="btn-group">
+                    <a class="btn" data-edit="undo" title="" data-original-title="Undo (Ctrl/Cmd+Z)"><i
+                            class="fas fa-undo"></i></a>
+                    <a class="btn" data-edit="redo" title="" data-original-title="Redo (Ctrl/Cmd+Y)"><i
+                            class="fas fa-redo"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-12">
+            <p>Word Count: <span class="body-word-count">0</span></p>
+        </div>
+        <div class="form-group col-12">
+            <textarea name="body-txt" id="body-txt" class="d-none" role="editor" rows="40"></textarea>
+            <div class="body-wyswyg-editor" name="body-wyswyg-editor" contenteditable="true"></div>
+        </div>
+
+    </section>
+    <script src="js/register.js"></script>
+</body>
+
+</html>

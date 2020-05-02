@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/all.min.css" rel="stylesheet">
+    <link href="css/mdb.min.css" rel="stylesheet">
+
+    <link href="html/medium/medium.css" rel="stylesheet">
+    <title>Medium HTML Editor</title>
+
+    <style>
+        .body-wyswyg-editor {
+            border: 1px solid #000;
+            width: 100%;
+            min-height: 700px;
+            max-height: 700px;
+            overflow-y: scroll;
+            font-weight: normal;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .show {
+            display: block !important;
+        }
+
+        .modal-header,
+        .modal-footer {
+            border: none;
+        }
+
+        .modal-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1050;
+            display: none;
+            width: 100%;
+            height: 100%;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            outline: 0;
+            background-color: rgba(0, 0, 0, .6);
+        }
+
+        .modal-bg.show {
+            display: flex;
+            opacity: .5;
+        }
+
+        .modal-bg.fade {
+            opacity: 0;
+        }
+
+        .far,
+        .fas {
+            color: #000;
+        }
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="favicon.ico" rel="shortcut icon">
+    <link rel="icon" type="image/jpg" href="meta/favicon-16x16.jpg" sizes="16x16">
+    <link rel="icon" type="image/jpg" href="meta/favicon-32x32.jpg" sizes="32x32">
+    <link rel="icon" type="image/jpg" href="meta/favicon-96x96.jpg" sizes="96x96">
+    <meta name="theme-color" content="#3c3c42">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+    <section class="d-flex m-2 p-2 justify-content-center align-items-center flex-column col-12 wysiwyg-wrapper">
+        <div class="form-group col-12">
+            <div class="btn-toolbar editor-toolbar d-flex flex-row flex-wrap" data-role="editor-toolbar"
+                data-target="#editor">
+                <div class="btn-group">
+                    <a class="btn btn-edit" data-edit="b" title="" data-original-title="Bold (Ctrl/Cmd+B)">
+                        <i class="fas fa-bold"></i></a>
+                    <a class="btn btn-edit" data-edit="i" title="" data-original-title="Italic (Ctrl/Cmd+I)">
+                        <i class="fas fa-italic"></i></a>
+                    <a class="btn btn-edit" data-edit="strike" title="" data-original-title="Strikethrough"><i
+                            class="fas fa-strikethrough"></i></a>
+                    <a class="btn btn-edit" data-edit="u" title="" data-original-title="Underline (Ctrl/Cmd+U)"><i
+                            class="fas fa-underline"></i></a>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn-action" data-edit="insertunorderedlist" title=""
+                        data-original-title="Bullet list"><i class="fas fa-list-ul"></i></a>
+                    <a class="btn btn-action" data-edit="insertorderedlist" title=""
+                        data-original-title="Number list"><i class="fas fa-list-ol"></i></a>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn-action" data-edit="addlink" title="" data-original-title="Remove Hyperlink"><i
+                            class="fas fa-link"></i></a>
+                    <a class="btn btn-action" data-edit="unlink" title="" data-original-title="Remove Hyperlink"><i
+                            class="fas fa-unlink"></i></a>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn-action" data-edit="addPhoto"
+                        data-original-title="Insert picture (or just drag &amp; drop)"><i class="far fa-image"></i></a>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn-action" data-edit="undo" title="" data-original-title="Undo (Ctrl/Cmd+Z)"><i
+                            class="fas fa-undo"></i></a>
+                    <a class="btn btn-action" data-edit="redo" title="" data-original-title="Redo (Ctrl/Cmd+Y)"><i
+                            class="fas fa-redo"></i></a>
+                    <a class="btn btn-action" data-edit="code" title="" data-original-title="Insert Code"><i
+                            class="fas fa-code"></i></a>
+                </div>
+            </div>
+        </div>
+        <div id="editor" class="body-wyswyg-editor">
+
+            <p>Being a seasoned veteran of conferences, one thing I know is important is having the schedule handy. You
+                could carry around a printed schedule, but that is so analog.</p>
+            <figure>
+                <img class="lazy-image" sizes="(max-width: 736px) 80vw,(max-width: 4060px) 60vw, 2030px"
+                    alt="Server Side Rendered Web Page"
+                    srcset="https://love2dev.com/img/class-server-side-rendered-web-page-2030x864.jpg 2030w, https://love2dev.com/img/class-server-side-rendered-web-page-1200x511.jpg 1200w, https://love2dev.com/img/class-server-side-rendered-web-page-992x423.jpg 992w,https://love2dev.com/img/class-server-side-rendered-web-page-768x327.jpg 768w,https://love2dev.com/img/class-server-side-rendered-web-page-576x246.jpg 576w,https://love2dev.com/img/class-server-side-rendered-web-page-460x196.jpg 460w,https://love2dev.com/img/class-server-side-rendered-web-page-320x137.jpg 320w"
+                    src="https://love2dev.com/img/class-server-side-rendered-web-page-2030x864.jpg">
+                <noscript><img src="https://love2dev.com/img/class-server-side-rendered-web-page-1200x511.jpg"
+                        alt="Server Side Rendered Web Page"></noscript>
+                <figcaption>Server Side Rendered Web Page</figcaption>
+            </figure>
+            <p>Today everyone has a phone in their pocket that of course is a powerful computer. Each one of those
+                phones
+                has a browser, which can load any progressive web app. So, let's have a conference schedule application
+                to
+                make the schedule available to the attendees at all times.</p>
+            <p>If you plan on attending a session or want to attend a session, each session card, and its detail page,
+                has a little
+                star. You can tap the star to toggle the session on an off your list of favorites.</p>
+
+            <p>Each session has a button you can click/tap to see the session detail.</p>
+
+            <p>Each session lists the speaker(s), which are linked to the speaker's profile page.
+            </p>
+        </div>
+
+    </section>
+
+    <div class="modal-bg" role="dialog" aria-modal="true"></div>
+
+    <div class="modal fade modal-add-anchor" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="protocol-code-panel flex-column">
+                        <div class="row d-flex justify-content-center py-3 col-12 mx-2">
+                            <h1>Insert Link</h1>
+                        </div>
+                        <div class="col-12 d-flex justify-content-center py-3 md-form">
+                            <input type="url" required spellcheck="off" class="col-10" name="new-url">
+                        </div>
+                        <div class="col-12 d-flex justify-content-center py-3 mb-5 flex-wrap">
+                            <button class="col-5 btn btn-link mr-2 btn-cancel-link">Cancel</button>
+                            <button class="col-5 btn btn-success btn-insert-link" disabled
+                                aria-disabled="true">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="html/medium/rangy-core.js"></script>
+    <script src="html/medium/rangy-classapplier.js"></script>
+    <script src="html/medium/undo.js"></script>
+    <script src="html/medium/medium.js"></script>
+
+    <script src="html/medium/wysiwyg.js"></script>
+
+    <script src="js/register.js"></script>
+</body>
+
+</html>

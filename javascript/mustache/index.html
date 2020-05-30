@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <title>JavaScript Barcode Example</title>
+
+    <meta http-equiv="origin-trial"
+        content="AjUojkd0outr3DNzGBsPP89Hwrm+AvTQDAET7BJ6FN44oR+STQySexF7on5OtP3v8nJjZ2Ac4G+z/xmBJEqbuAQAAABgeyJvcmlnaW4iOiJodHRwczovL2xvdmUyZGV2LmNvbTo0NDMiLCJmZWF0dXJlIjoiQmFkZ2luZyIsImV4cGlyeSI6MTU2MjA5NDA5MywiaXNTdWJkb21haW4iOnRydWV9">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="favicon.ico" rel="shortcut icon">
+    <link rel="icon" type="image/jpg" href="meta/favicon-16x16.jpg" sizes="16x16">
+    <link rel="icon" type="image/jpg" href="meta/favicon-32x32.jpg" sizes="32x32">
+    <link rel="icon" type="image/jpg" href="meta/favicon-96x96.jpg" sizes="96x96">
+    <meta name="theme-color" content="#3c3c42">
+    <link rel="manifest" href="manifest.json">
+
+    <style>
+        .ml-2 {
+            margin-left: 8%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+    </div>
+
+    <script src="js/mustache.min.js"></script>
+
+    <script>
+        var partial_src = {
+                "template1": "javascript/mustache/template1.html",
+                "template2": "javascript/mustache/template2.html",
+                "template3": "javascript/mustache/template3.html",
+                "child1": "javascript/mustache/child1.html",
+                "child2": "javascript/mustache/child2.html"
+            },
+            test_data = {
+                value1: "This is the first partial",
+                value2: {
+                    text: "This is the second partial",
+                    child: "This is the child value"
+                },
+                value3: "This is the third partial",
+                child_value1: "this is the first level child value"
+            };
+
+        function fetchAndRenderTemplate( src, data, partials ) {
+
+            return fetchTemplate( {
+                    src: src
+                } )
+                .then( function ( template ) {
+
+                    return renderTemplate( template, data, partials );
+
+                } );
+
+        }
+
+        function fetchPartials( list ) {
+
+            var actions = [];
+
+            var key,
+                i = 0;
+
+            for ( key in list ) {
+
+                actions.push( fetchTemplate( {
+                    src: list[ key ]
+                } ) );
+
+            }
+
+            return Promise.all( actions )
+                .then( function ( results ) {
+
+                    var key,
+                        i = 0;
+
+                    for ( key in list ) {
+
+                        if ( list.hasOwnProperty( key ) ) {
+
+                            list[ key ] = results[ i++ ];
+
+                        }
+
+                    }
+
+                    return list;
+
+                } )
+                .catch( function ( err ) {
+                    console.error( err );
+                } );
+
+        }
+
+        function renderTemplate( html, data, partials ) {
+
+            return Mustache.render( html, data, partials );
+
+        }
+
+        function fetchTemplate( options ) {
+
+            return fetch( options.src )
+                .then( function ( response ) {
+
+                    return response.text();
+
+                } );
+
+        }
+
+        fetchPartials( partial_src )
+            .then( function ( partials ) {
+
+                return fetchAndRenderTemplate( "javascript/mustache/template.html",
+                        test_data,
+                        partials )
+                    .then( function ( html ) {
+
+                        var target = document.querySelector( ".main-content" );
+
+                        target.innerHTML = html;
+
+                    } );
+
+            } );
+    </script>
+</body>
+
+</html>

@@ -11,6 +11,7 @@
     "private": true,
     "devDependencies": {
         "faker": "*",
-        "popper.js": "*"
+        "popper.js": "*",
+        "web-vitals": "0.2.2"
     }
 }

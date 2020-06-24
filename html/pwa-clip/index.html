@@ -1,0 +1,196 @@
+`
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Love2Dev - PWA Clip Example</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+
+    <style>
+        :root {
+            --site-primary-darkest: #250000;
+            --site-primary-darker: #490000;
+            --site-primary-dark: #6E0000;
+            --site-primary: #7A0000;
+            --site-primary-light: #A24D4D;
+            --site-primary-lighter: #CA9999;
+            --site-primary-lightest: #F2E6E6;
+            --site-white-darkest: #4C4C4C;
+            --site-white-darker: #989898;
+            --site-white-dark: #E5E5E5;
+            --site-white: #D4D7E2;
+            --site-white-light: #efefef;
+            --site-white-lighter: #fff;
+            --site-white-lightest: #fff;
+            --site-dark-darkest: #3C3C42;
+            --site-dark-darker: #363636;
+            --site-dark-dark: #696969;
+            --site-dark: #B3B6CB;
+            --site-dark-light: #bdbdbd;
+            --site-dark-lighter: #dedede;
+            --site-dark-lightest: #dfdfdf;
+            --site-blue: #0F2094;
+            --site-red: #DC0002;
+            --site-purple-lightest: #d435bc;
+            --site-purple: #5e17eb;
+            --site-purple-dark: rgb(179, 4, 176);
+            --site-purple-darker: rgb(148, 7, 148);
+            --site-purple-darkest: rgb(105, 8, 104);
+            --site-dark-gray: #B3B6CB;
+            --site-gray: #F4F5F9;
+            --site-alert: #EF6361;
+            --site-green: #49CD8D;
+            --site-yellow: rgb(218, 221, 48);
+            --site-orange: rgb(247, 138, 14);
+            --common-margin: 16px;
+            --font-size-16: 16px;
+            --font-size-20: 20px;
+            --radius-32: 32px;
+            --radius-16: 16px;
+            --radius-8: 8px;
+
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            min-width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--site-white);
+            color: var(--site-dark-darker);
+        }
+
+        .main-container {
+            padding: 2em;
+            min-width: 100%;
+            min-height: 100vh;
+        }
+
+        .pwa-clip {
+            overflow: hidden;
+            min-height: 450px;
+            border: 0;
+            box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+            position: absolute;
+            bottom: 0;
+            right: 12px;
+            border-top-left-radius: var(--radius-32);
+            border-top-right-radius: var(--radius-32);
+        }
+
+        .pwa-clip .card-body {
+            overflow-y: auto;
+        }
+
+        .pwa-clip-img {
+            height: 200px;
+            min-height: 200px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            border-color: inherit;
+        }
+
+        /* First border-left-width setting is a fallback */
+        .pwa-clip-img::after {
+            position: absolute;
+            content: "";
+            top: 161px;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-top-width: 40px;
+            border-right-width: 0;
+            border-bottom-width: 0;
+            border-left-width: 545px;
+            border-left-width: calc(575px - 5vw);
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            border-left-color: inherit;
+            border-left-color: #fff;
+        }
+
+        .pwa-clip-avatar img {
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+            position: absolute;
+            top: 100px;
+            left: 1.25rem;
+            width: 100px;
+            height: 100px;
+            background: inherit;
+        }
+
+        .pwa-clip-wide {
+            overflow: hidden;
+            border: 0;
+            width: 100%;
+            box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+        }
+
+        .pwa-clip-wide-img {
+            height: 160px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* First left setting is a fallback */
+        .pwa-clip-wide .pwa-clip-avatar img {
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+            position: absolute;
+            top: 20px;
+            left: 43.3%;
+            left: calc(50% - 75px);
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="favicon.ico" rel="shortcut icon">
+    <link rel="icon" type="image/jpg" href="meta/favicon-16x16.jpg" sizes="16x16">
+    <link rel="icon" type="image/jpg" href="meta/favicon-32x32.jpg" sizes="32x32">
+    <link rel="icon" type="image/jpg" href="meta/favicon-96x96.jpg" sizes="96x96">
+    <meta name="theme-color" content="#3c3c42">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+    <main class="main-container">
+
+
+    </main>
+
+    <div class="pwa-clip col-12 col-md-5 col-xl-3 flex-shrink-1 m-2 p-0 card bg-white border-white animated slideinup">
+        <div class="pwa-clip-img" style="background-image: url(img/background-1932466_1920-1920x1271.jpg);">
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Hazzard Resources</h4>
+            <p class="card-text">Information and Resources to help with common emergency situations</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

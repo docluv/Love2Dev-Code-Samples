@@ -58,3 +58,4 @@ typings/
 .env
 
 /javascript/lazy/lazy.zip
+/bin/dev.env

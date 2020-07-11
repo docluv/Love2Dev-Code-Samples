@@ -12,6 +12,23 @@
     "devDependencies": {
         "faker": "*",
         "popper.js": "*",
-        "web-vitals": "0.2.2"
+        "web-vitals": "0.2.2",
+        "del": "*",
+        "generate-schema": "*",
+        "glob": "*",
+        "jsdom": "*",
+        "json-forms": "*",
+        "lodash": "*",
+        "matchdep": "*",
+        "mime-types": "*",
+        "mkdirp": "*",
+        "mustache": "*",
+        "ncp": "*",
+        "papaparse": "*",
+        "strip-bom": "*",
+        "watch": "*",
+        "yargs": "*",
+        "gitlog": "^3.2.0",
+        "uglify-es": "*"
     }
 }

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="/">
+
+    <title>Love2Dev - Audio</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../../css/libs/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            flex-direction: column;
+        }
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="favicon.ico" rel="shortcut icon">
+    <link rel="icon" type="image/jpg" href="meta/favicon-16x16.jpg" sizes="16x16">
+    <link rel="icon" type="image/jpg" href="meta/favicon-32x32.jpg" sizes="32x32">
+    <link rel="icon" type="image/jpg" href="meta/favicon-96x96.jpg" sizes="96x96">
+    <meta name="theme-color" content="#3c3c42">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="row p-5">
+            <h1>Audio Element Example</h1>
+        </header>
+        <div class="row d-flex justify-content-center col-12 px-5">
+            <p>You can see how to play an audio file using the HTML audio element. To test if the device and browser
+                supports playing with the lock screen you can keep the episode playing and see what happens.</p>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12 d-flex justify-content-center">
+
+                <audio class="cp-player" data-duration="1997.45308333333" data-start="0" preload="none" controls="">
+                    <source type="audio/mp3" src="html/audio/podcast.mp3">
+                </audio>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

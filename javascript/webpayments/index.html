@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 
-<head><base href="/">
+<head>
+    <base href="/">
 
-    <title>Love2Dev - DataList Examples</title>
+    <title>Love2Dev - Payment Request API Example</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="../../css/libs/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/libs/bootstrap.min.css" rel="stylesheet" type="text/css">
     <style>
         * {
             margin: 0;
@@ -24,28 +25,111 @@
         }
     </style>
 
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="favicon.ico" rel="shortcut icon"><link rel="icon" type="image/jpg" href="meta/favicon-16x16.jpg" sizes="16x16"><link rel="icon" type="image/jpg" href="meta/favicon-32x32.jpg" sizes="32x32"><link rel="icon" type="image/jpg" href="meta/favicon-96x96.jpg" sizes="96x96"><meta name="theme-color" content="#3c3c42"><link rel="manifest" href="manifest.json"></head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="favicon.ico" rel="shortcut icon">
+    <link rel="icon" type="image/jpg" href="meta/favicon-16x16.jpg" sizes="16x16">
+    <link rel="icon" type="image/jpg" href="meta/favicon-32x32.jpg" sizes="32x32">
+    <link rel="icon" type="image/jpg" href="meta/favicon-96x96.jpg" sizes="96x96">
+    <meta name="theme-color" content="#3c3c42">
+    <link rel="manifest" href="manifest.json">
+</head>
 
 <body>
 
     <main class="d-flex flex-row justify-content-center">
-        <section class="d-flex my-5 border-bottom border-dark">
-
-
+        <section class="d-none my-5 border-bottom border-dark success-panel">
+            <h1>Success</h1>
+        </section>
+        <section class="d-none my-5 border-bottom border-dark failure-panel">
+            <h1>Failure</h1>
+        </section>
+        <section class="d-none my-5 border-bottom border-dark old-browser-panel">
+            <h1>Old Browser</h1>
         </section>
     </main>
 
     <script>
+        function buildSupportedPaymentMethodData() {
+            // Example supported payment methods:
+            return [ {
+                supportedMethods: 'basic-card',
+                data: {
+                    supportedNetworks: [ 'visa', 'mastercard' ],
+                    supportedTypes: [ 'debit', 'credit' ]
+                }
+            } ];
+        }
+
+        function buildShoppingCartDetails() {
+            // Hardcoded for demo purposes:
+            return {
+                id: 'order-123',
+                displayItems: [ {
+                    label: 'Example item',
+                    amount: {
+                        currency: 'USD',
+                        value: '1.00'
+                    }
+                } ],
+                total: {
+                    label: 'Total',
+                    amount: {
+                        currency: 'USD',
+                        value: '1.00'
+                    }
+                },
+                shippingOptions: [ {
+                    id: 'standard',
+                    label: 'Standard shipping',
+                    amount: {
+                        currency: 'USD',
+                        value: '0.00'
+                    },
+                    selected: true
+                } ]
+            };
+        }
         if ( window.PaymentRequest ) {
             // Use Payment Request API
 
+            var request = new PaymentRequest( buildSupportedPaymentMethodData(),
+                buildShoppingCartDetails(), {
+                    requestPayerName: true,
+                    requestPayerEmail: true,
+                    requestShipping: true
+                } );
+
+            request.show()
+                .then( function ( paymentResponse ) {
+                    // Here we would process the payment. For this demo, simulate immediate success:
+                    paymentResponse.complete( 'success' )
+                        .then( () => {
+
+                            console.log( paymentResponse );
+
+                            document.querySelector( ".success-panel" ).classList.remove( "d-none" );
+                            document.querySelector( ".success-panel" ).classList.add( "d-flex" );
+                        } );
+                } )
+                .catch( err => {
+
+                    document.querySelector( ".failure-panel" ).classList.remove( "d-none" );
+                    document.querySelector( ".failure-panel" ).classList.add( "d-flex" );
+                    console.error( err );
+                } );
+
         } else {
             // Fallback to traditional checkout
-            window.location.href = '/checkout/traditional';
+            //window.location.href = '/checkout/traditional';
+            console.log( "old browser...." );
+
+            document.querySelector( ".old-browser-panel" ).classList.remove( "d-none" );
+            document.querySelector( ".old-browser-panel" ).classList.add( "d-flex" );
 
         }
     </script>
 
-<script src="js/register.js"></script></body>
+    <script src="js/register.js"></script>
+</body>
 
 </html>

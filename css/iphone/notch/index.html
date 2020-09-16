@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="/">
+
+    <title>Love2Dev - iPhone Notch</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
+
+    <link href="css/libs/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/libs/all.min.css" rel="stylesheet" type="text/css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body {
+            background-color: crimson;
+            padding: max(0, constant(safe-area-inset-top)) max(0, constant(safe-area-inset-right)) max(0, constant(safe-area-inset-bottom)) max(0, constant(safe-area-inset-left));
+        }
+
+        .main-content {
+            background-color: #fff;
+            min-height: 100%;
+            width: 100%;
+        }
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="favicon.ico" rel="shortcut icon">
+    <link rel="icon" type="image/jpg" href="meta/favicon-16x16.jpg" sizes="16x16">
+    <link rel="icon" type="image/jpg" href="meta/favicon-32x32.jpg" sizes="32x32">
+    <link rel="icon" type="image/jpg" href="meta/favicon-96x96.jpg" sizes="96x96">
+    <meta name="theme-color" content="#3c3c42">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+    <main class="main-content">
+        <h1>iPhone Notch Test</h1>
+        <p>If you are viewing this on an iPhone X or 11 with a notch you should see some crimson border. There are a few
+            Androids with notches as well. Hopefully you see the crimson border there too.</p>
+    </main>
+
+    <script src="js/register.js"></script>
+</body>
+
+</html>

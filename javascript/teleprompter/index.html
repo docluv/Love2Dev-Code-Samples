@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            background-color: #000;
+            color: #ccc;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10em;
+        }
+
+        p {
+            padding-bottom: 3em;
+        }
+
+        body>p {
+            padding-top: 0;
+        }
+
+        a {
+            color: #5bbbff;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Progressive web apps rock and so do the</p>
+    <p>Texas Rangers</p>
+    <p>But Spartan is sidelined</p>
+    <p>for the yearhowever you can stillbust</p>
+    <p>your ass and get in to killer shapeand</p>
+    <p>get your financial house in order</p>
+</body>
+<script>
+    ( () => {
+        let currentElement = document.querySelector( "p" );
+        const advance = ( direction ) => {
+            currentElement = currentElement[ direction + "ElementSibling" ];
+            if ( !currentElement ) currentElement = document.querySelector( "p" );
+            currentElement.scrollIntoView( true );
+        };
+        document.body.onkeyup = ( e ) => {
+            const keyCode = e.keyCode.toString();
+            if ( /32|39|77/.test( keyCode ) ) advance( "next" );
+            if ( /37|78/.test( keyCode ) ) advance( "previous" );
+        };
+    } )();
+</script>
+
+</html>

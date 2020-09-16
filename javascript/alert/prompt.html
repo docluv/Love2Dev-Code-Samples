@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><base href="/">
+<head>
+    <base href="/">
     <meta charset="UTF-8">
     <title>JavaScript Prompt Dialog</title>
 
@@ -61,7 +62,14 @@
         }
     </style>
 
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="favicon.ico" rel="shortcut icon"><link rel="icon" type="image/jpg" href="meta/favicon-16x16.jpg" sizes="16x16"><link rel="icon" type="image/jpg" href="meta/favicon-32x32.jpg" sizes="32x32"><link rel="icon" type="image/jpg" href="meta/favicon-96x96.jpg" sizes="96x96"><meta name="theme-color" content="#3c3c42"><link rel="manifest" href="manifest.json"></head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="favicon.ico" rel="shortcut icon">
+    <link rel="icon" type="image/jpg" href="meta/favicon-16x16.jpg" sizes="16x16">
+    <link rel="icon" type="image/jpg" href="meta/favicon-32x32.jpg" sizes="32x32">
+    <link rel="icon" type="image/jpg" href="meta/favicon-96x96.jpg" sizes="96x96">
+    <meta name="theme-color" content="#3c3c42">
+    <link rel="manifest" href="manifest.json">
+</head>
 
 <body>
 
@@ -74,17 +82,18 @@
     </div>
 
     <script>
-        var simpleprompt = document.querySelector(".simple-prompt");
+        var simpleprompt = document.querySelector( ".simple-prompt" );
 
-        simpleprompt.addEventListener("click", function (e) {
+        simpleprompt.addEventListener( "click", function ( e ) {
 
             e.preventDefault();
 
-            console.log(prompt("This is an prompt Dialog", "Please Provide a Response..."));
+            console.log( prompt( "This is an prompt Dialog", "Please Provide a Response..." ) );
 
-        });
+        } );
     </script>
 
-<script src="js/register.js"></script></body>
+    <script src="js/register.js"></script>
+</body>
 
 </html>

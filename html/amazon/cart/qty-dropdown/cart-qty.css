@@ -1,0 +1,95 @@
+.a-popover-wrapper {
+    overflow: hidden;
+    border: 1px solid #cdcdcd;
+    border-color: rgba(0, 0, 0, .2);
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .13);
+    background-color: #fff;
+}
+
+.a-dropdown-common .a-popover-inner {
+    padding: 8px 0;
+}
+
+.a-popover-inner {
+    background-color: #fff;
+    padding: 14px 18px;
+    text-align: left;
+    overflow-x: hidden;
+}
+
+.a-popover-inner dl:last-child,
+.a-popover-inner ol:last-child,
+.a-popover-inner p:last-child,
+.a-popover-inner ul:last-child {
+    margin-bottom: 0;
+}
+
+.a-dropdown-common .a-list-link {
+    position: relative;
+    left: -1px;
+    margin-right: -1px;
+}
+
+.a-ordered-list.a-list-link,
+.a-unordered-list.a-list-link,
+ol.a-list-link,
+ul.a-list-link {
+    margin: -2px 0 0;
+}
+
+.a-ordered-list.a-nostyle,
+.a-unordered-list.a-nostyle,
+ol.a-nostyle,
+ul.a-nostyle {
+    margin-left: 0;
+    color: #111;
+}
+
+.a-ordered-list,
+.a-unordered-list,
+ol,
+ul {
+    padding: 0;
+}
+
+.a-unordered-list,
+ul {
+    margin: 0 0 0 18px;
+    color: #111;
+}
+
+.a-dropdown-common .a-dropdown-item {
+    margin: 0;
+    outline: 0;
+}
+
+.a-ordered-list.a-list-link li,
+.a-unordered-list.a-list-link li,
+ol.a-list-link li,
+ul.a-list-link li {
+    display: block;
+    position: relative;
+}
+
+.a-ordered-list.a-nostyle li,
+.a-unordered-list.a-nostyle li,
+ol.a-nostyle li,
+ul.a-nostyle li {
+    list-style: none;
+}
+
+.a-ordered-list li,
+.a-unordered-list li,
+ol li,
+ul li {
+    word-wrap: break-word;
+    margin: 0;
+}
+
+.a-unordered-list li,
+ul li {
+    list-style: disc;
+}

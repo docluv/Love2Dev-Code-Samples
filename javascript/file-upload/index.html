@@ -1,126 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head><base href="/">
-    <meta charset="UTF-8">
+  <head>
+    <base href="/" />
+    <meta charset="UTF-8" />
     <title>File Upload Test</title>
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"
+    />
     <style>
-        body {
-            display: flex;
-            min-height: 100vh;
-            flex-direction: column;
-        }
+      body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      }
 
-        main {
-            flex: 1 0 auto;
-        }
+      main {
+        flex: 1 0 auto;
+      }
 
-        body {
-            background: #fff;
-        }
+      body {
+        background: #fff;
+      }
 
-        .input-field input[type=date]:focus+label,
-        .input-field input[type=text]:focus+label,
-        .input-field input[type=email]:focus+label,
-        .input-field input[type=password]:focus+label {
-            color: #e91e63;
-        }
+      .input-field input[type="date"]:focus + label,
+      .input-field input[type="text"]:focus + label,
+      .input-field input[type="email"]:focus + label,
+      .input-field input[type="password"]:focus + label {
+        color: #e91e63;
+      }
 
-        .input-field input[type=date]:focus,
-        .input-field input[type=text]:focus,
-        .input-field input[type=email]:focus,
-        .input-field input[type=password]:focus {
-            border-bottom: 2px solid #e91e63;
-            box-shadow: none;
-        }
+      .input-field input[type="date"]:focus,
+      .input-field input[type="text"]:focus,
+      .input-field input[type="email"]:focus,
+      .input-field input[type="password"]:focus {
+        border-bottom: 2px solid #e91e63;
+        box-shadow: none;
+      }
 
-        .login-container {
-            display: inline-block;
-            padding: 32px 48px 0px 48px;
-            border: 1px solid #EEE;
-        }
+      .login-container {
+        display: inline-block;
+        padding: 32px 48px 0px 48px;
+        border: 1px solid #eee;
+      }
     </style>
 
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="favicon.ico" rel="shortcut icon"><link rel="icon" type="image/jpg" href="meta/favicon-16x16.jpg" sizes="16x16"><link rel="icon" type="image/jpg" href="meta/favicon-32x32.jpg" sizes="32x32"><link rel="icon" type="image/jpg" href="meta/favicon-96x96.jpg" sizes="96x96"><meta name="theme-color" content="#3c3c42"><link rel="manifest" href="manifest.json"></head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link href="favicon.ico" rel="shortcut icon" />
+    <link
+      rel="icon"
+      type="image/jpg"
+      href="meta/favicon-16x16.jpg"
+      sizes="16x16"
+    />
+    <link
+      rel="icon"
+      type="image/jpg"
+      href="meta/favicon-32x32.jpg"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/jpg"
+      href="meta/favicon-96x96.jpg"
+      sizes="96x96"
+    />
+    <meta name="theme-color" content="#3c3c42" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
 
-<body>
+  <body>
     <div class="section"></div>
     <main>
-        <center>
+      <center>
+        <h5 class="indigo-text">Select a File</h5>
 
-            <h5 class="indigo-text">Select a File</h5>
+        <div class="container login-container">
+          <div class="z-depth-1 grey lighten-4 row">
+            <form class="col s12" method="post">
+              <div class="row">
+                <div class="col s12"></div>
+              </div>
 
-            <div class="container login-container">
-                <div class="z-depth-1 grey lighten-4 row">
-
-                    <form class="col s12" method="post">
-                        <div class='row'>
-                            <div class='col s12'>
-                            </div>
-                        </div>
-
-                        <div class='row'>
-                            <div class='input-field col s12'>
-                                <input type='file' name='AvatarImage' />
-                                <label for='AvatarImage'>Upload Your Avatar</label>
-                            </div>
-                        </div>
-
-                        <div class='row'>
-                            <div class='input-field col s12'>
-                                <input class='validate' type='text' name='FileName' />
-                                <label for='FileName'>File Name</label>
-                            </div>
-                        </div>
-
-                        <br />
-                        <center>
-                            <div class='row'>
-                                <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect indigo btn-upload'>Upload</button>
-                            </div>
-                        </center>
-                    </form>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="file" name="AvatarImage" />
+                  <label for="AvatarImage">Upload Your Avatar</label>
                 </div>
-            </div>
-        </center>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <input class="validate" type="text" name="FileName" />
+                  <label for="FileName">File Name</label>
+                </div>
+              </div>
+
+              <br />
+              <center>
+                <div class="row">
+                  <button
+                    type="submit"
+                    name="btn_login"
+                    class="col s12 btn btn-large waves-effect indigo btn-upload"
+                  >
+                    Upload
+                  </button>
+                </div>
+              </center>
+            </form>
+          </div>
+        </div>
+      </center>
     </main>
 
     <script>
+      let btn = document.querySelector(".btn-upload");
 
-        let btn = document.querySelector(".btn-upload");
+      btn.addEventListener("click", function (evt) {
+        evt.preventDefault();
 
-        btn.addEventListener("click", function (evt) {
+        (avatar = document.querySelector("[name=AvatarImage]")),
+          (formData = new FormData());
 
-            evt.preventDefault();
+        formData.append("AvatarImage", avatar.files[0]);
 
+        formData.append(
+          "FileName",
+          document.querySelector("[name=FileName]").value
+        );
 
-            avatar = document.querySelector("[name=AvatarImage]"),
-                formData = new FormData();
+        fetch("http://localhost:64752/api/auth/face/", {
+          method: "POST",
+          mode: "no-cors",
+          body: formData
+        })
+          .then(function (res) {
+            console.log("Status", res);
+            console.log("Status", res.headers.entries());
+          })
+          .catch(function (e) {
+            console.log("Error", e);
+          });
 
-            formData.append("AvatarImage", avatar.files[0]);
-
-            formData.append("FileName", document.querySelector("[name=FileName]").value);
-
-
-            fetch('http://localhost:64752/api/auth/face/', {
-                method: 'POST',
-                mode: 'no-cors',
-                body: formData
-            }).then(function (res) {
-                console.log('Status', res);
-                console.log('Status', res.headers.entries());
-            }).catch(function (e) {
-                console.log('Error', e);
-            });
-
-            return false;
-
-        });
-
+        return false;
+      });
     </script>
-<script src="js/register.js"></script></body>
-
+    <script src="js/register.js"></script>
+  </body>
 </html>

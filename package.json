@@ -10,11 +10,10 @@
     "author": "Chris Love",
     "private": true,
     "devDependencies": {
-        "faker": "*",
-        "popper.js": "*",
-        "web-vitals": "0.2.2",
         "del": "*",
+        "faker": "*",
         "generate-schema": "*",
+        "gitlog": "^3.2.0",
         "glob": "*",
         "jsdom": "*",
         "json-forms": "*",
@@ -25,10 +24,11 @@
         "mustache": "*",
         "ncp": "*",
         "papaparse": "*",
+        "popper.js": "*",
         "strip-bom": "*",
+        "uglify-es": "*",
         "watch": "*",
-        "yargs": "*",
-        "gitlog": "^3.2.0",
-        "uglify-es": "*"
+        "web-vitals": "0.2.2",
+        "yargs": "*"
     }
 }

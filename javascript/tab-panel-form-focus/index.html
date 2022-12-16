@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="/" />
+    <meta charset="UTF-8" />
+    <title>Tab Panel - Input Autofocus on Panel Change</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/tab-panel.css">
+
+    <style>
+        :root {
+
+            --site-primary-darkest: #111111;
+            --site-primary-darker: #004091;
+            --site-primary-dark: #186FA7;
+            --site-primary: #0086DC;
+            --site-primary-light: #2484ff;
+            --site-primary-lighter: #6dadff;
+            --site-primary-lightest: #b6d6ff;
+            --site-secondary-darkest: #481600;
+            --site-secondary-darker: #902c00;
+            --site-secondary-dark: #d94201;
+            --site-secondary: #FF6600;
+            --site-secondary-light: #fd6625;
+            --site-secondary-lighter: #fe996e;
+            --site-secondary-lightest: #feccb6;
+            --site-white-darkest: #4c4c4c;
+            --site-white-darker: #e4e0e0;
+            --site-white-dark: #e5e5e5;
+            --site-white: #F8F8F8;
+            --site-white-light: #efefef;
+            --site-white-lighter: #fff;
+            --site-white-lightest: #fff;
+            --site-dark-darkest: #1E272E;
+            --site-dark-darker: #272D31;
+            --site-dark-dark: #1f1f1f;
+            --site-dark: #2F2F2F;
+            --site-dark-light: #bdbdbd;
+            --site-dark-lighter: #dedede;
+            --site-dark-lightest: #dfdfdf;
+            --site-blue: #0086DC;
+            --site-darkest-blue: #021354;
+            --site-dark-blue: #031768;
+            --site-pastel-blue: #33FFFF;
+            --site-teal: #0F4C4C;
+            --site-purple: #B05ADB;
+            --site-red: #dc0002;
+            --site-dark-gray: #b3b6cb;
+            --site-gray: #f6f6f6;
+            --site-alert: #ef6361;
+            --site-green: #49cd8d;
+            --site-yellow: rgb(218, 221, 48);
+            --site-orange: rgb(247, 138, 14);
+            --site-orange-light: #FFA60D;
+            --site-brown: #794129;
+            --pale-blue: #DAEAF8;
+            --pale-blue-gradient: linear-gradient(90deg, rgba(218, 234, 248, 1) 0%, rgba(248, 252, 255, 1) 20%, rgba(255, 255, 255, 0) 100%);
+
+            --common-margin: 16px;
+            --font-small: 14px;
+            --font-size-16: 16px;
+            --font-size-20: 20px;
+            --font-size-22: 22px;
+            --font-size-32: 32px;
+            --radius-16: 16px;
+            --radius-8: 8px;
+            --radius-4: 4px;
+            --radius-circle: 50%;
+            --header-height: 54px;
+            --sidebar-width: 64px;
+            --sidebar-expanded-width: 264px;
+            --main-body-padding: 12px;
+
+            --site-gutter-x: 1.5rem;
+            --site-gutter-y: 0;
+
+            --nav-expanded-width: 240px;
+            --nav-expanded-width-neg: -180px;
+            --nav-collapsed-width: 60px;
+
+            --text-color: var(--site-primary-darkest);
+            --bkg-color: var(--site-white-light);
+            --bkg-color-light: var(--site-white);
+            --border-color: var(--site-primary-dark);
+            --text-inverse: var(--site-white-lighter);
+            --bkg-color-inverse: var(--site-primary-darkest);
+            --container-border-color: var(--site-gray);
+
+        }
+
+        @media (prefers-color-scheme: dark) {
+
+            /* defaults to dark theme */
+
+
+            body {
+
+                --text-color: var(--site-white-lighter);
+                --bkg-color: var(--site-dark-darkest);
+                --bkg-color2: var(--site-dark-darker);
+                --border-color: var(--site-white-light);
+                --bkg-color-inverse: var(--site-white-light);
+                --text-inverse: var(--site-primary-darkest);
+                --container-border-color: var(--site-dark-gray);
+                --bkg-color-light: var(--site-dark-darker);
+
+            }
+
+        }
+
+        body {
+            background-color: var(--bkg-color);
+            color: var(--text-color);
+            padding: 2rem 0;
+        }
+
+        .form-floating {
+            padding: .5em .25em;
+        }
+
+        .form-floating>.form-control-plaintext:focus,
+        .form-floating>.form-control-plaintext:not(:placeholder-shown),
+        .form-floating>.form-control:focus,
+        .form-floating>.form-control:not(:placeholder-shown) {
+            padding-top: .625rem;
+            height: auto;
+            margin-top: 1.625rem;
+        }
+
+        .form-floating>label {
+            top: .75em;
+            color: var(--text-inverse);
+            opacity: 1;
+        }
+
+        .form-floating>.form-control-plaintext~label,
+        .form-floating>.form-control:focus~label,
+        .form-floating>.form-control:not(:placeholder-shown)~label,
+        .form-floating>.form-select~label {
+            color: var(--text-color);
+            top: 0;
+        }
+
+        input[required]~label:after,
+        select[required]~label:after,
+        textarea[required]~label:after {
+            content: "*";
+            color: var(--site-red);
+        }
+
+        .tab-tab {
+            margin: 0;
+            border-radius: 0;
+            border-style: solid;
+            border-width: 2px;
+            border-color: var(--text-color);
+        }
+
+
+        .tab-content {
+            background-color: var(--site-primary-dark);
+        }
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="favicon.ico" rel="shortcut icon" />
+    <link rel="icon" type="image/jpg" href="meta/favicon-16x16.jpg" sizes="16x16" />
+    <link rel="icon" type="image/jpg" href="meta/favicon-32x32.jpg" sizes="32x32" />
+    <link rel="icon" type="image/jpg" href="meta/favicon-96x96.jpg" sizes="96x96" />
+    <meta name="theme-color" content="#3c3c42" />
+    <link rel="manifest" href="manifest.json" />
+</head>
+
+<body>
+    <header class="text-center">
+        <h1>Tab Panel - Input Autofocus on Panel Change</h1>
+    </header>
+    <main class="d-flex justify-content-center">
+
+        <div class="col-12 col-lg-9 col-xl-6 f-flex justify-content-center mt-5">
+
+            <form>
+                <div class="row col-12 my-2 px-0 tab-container">
+                    <div class="tab-pill-slider-container">
+                        <ul class="tab-pills">
+                            <li class="tab-pill mx-0 text-center">
+                                <div class="tab-tab active" tab-panel-id="panel-1" tab-autofocus="exampleInputEmail1">
+                                    Tab 1
+                                </div>
+                            </li>
+                            <li class="tab-pill mx-0 text-center">
+                                <div class="tab-tab" tab-panel-id="panel-2">Tab 2
+                                </div>
+                            </li>
+                            <li class="tab-pill mx-0 text-center">
+                                <div class="tab-tab" tab-panel-id="panel-3">Tab 3</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content clearfix col-12">
+                        <div class="tab-pane panel-1 flex-column active" id="panel-1">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" autofocus
+                                    aria-describedby="emailHelp" placeholder="Enter email" tabindex="100">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInput1">Next Field</label>
+                                <input type="text" class="form-control" id="exampleInput1" placeholder="Some Value" tabindex="110">
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1" tabindex="120">
+                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            </div>
+                        </div>
+    <div class="tab-pane panel-2 flex-column" id="panel-2">
+        <div class="form-floating col-12">
+            <textarea id="textarea_to_focus" class="form-control" name="email_markdown_body"
+                type="text" tab-focus="true" tabindex="120" rows="5" cols="40" required
+                placeholder="Focus On Me" aria-placeholder="Focus On Me" tabindex="200"></textarea>
+            <label for="textarea_to_focus">Focus on the TextArea</label>
+        </div>
+        <div class="form-group">
+            <label for="exampleInput3">Next Field</label>
+            <input type="text" class="form-control" id="exampleInput3" placeholder="Some Value" tabindex="210">
+        </div>
+    </div>
+    <div class="tab-pane panel-3 flex-column" id="panel-3">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheckToFocus"
+                tab-focus="true" tabindex="300">
+            <label class="form-check-label" for="exampleCheckToFocus">Focus On Me</label>
+        </div>
+        <div class="form-group">
+            <label for="exampleInput4">Next Field</label>
+            <input type="text" class="form-control" id="exampleInput4" placeholder="Some Value" tabindex="310">
+        </div>
+        <div class="form-group">
+            <label for="exampleInput5">Next Field</label>
+            <input type="text" class="form-control" id="exampleInput5" placeholder="Some Value" tabindex="320">
+        </div>
+    </div>
+
+                    </div>
+            </form>
+
+        </div>
+    </main>
+
+    <script src="js/tab-panel.js"></script>
+    <script>
+
+        tab_panel.initialize();
+
+    </script>
+
+</body>
+
+</html>

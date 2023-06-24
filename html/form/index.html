@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 
-<head><base href="/">
+<head>
+    <base href="/">
     <title>HTML Demos - The Checkbox</title>
 
     <link href="../../css/libs/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -13,7 +14,14 @@
             box-shadow: 0 0 0 0.1rem rgba(0, 0, 0, .25);
         }
     </style>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="favicon.ico" rel="shortcut icon"><link rel="icon" type="image/jpg" href="meta/favicon-16x16.jpg" sizes="16x16"><link rel="icon" type="image/jpg" href="meta/favicon-32x32.jpg" sizes="32x32"><link rel="icon" type="image/jpg" href="meta/favicon-96x96.jpg" sizes="96x96"><meta name="theme-color" content="#3c3c42"><link rel="manifest" href="manifest.json"></head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="favicon.ico" rel="shortcut icon">
+    <link rel="icon" type="image/jpg" href="meta/favicon-16x16.jpg" sizes="16x16">
+    <link rel="icon" type="image/jpg" href="meta/favicon-32x32.jpg" sizes="32x32">
+    <link rel="icon" type="image/jpg" href="meta/favicon-96x96.jpg" sizes="96x96">
+    <meta name="theme-color" content="#3c3c42">
+    <link rel="manifest" href="manifest.json">
+</head>
 
 <body>
 
@@ -27,11 +35,13 @@
                     <div class="form-group">
                         <label for="ReviewerName">Your Name</label>
                         <input placeholder="Your Name" id="ReviewerName" tabindex="1" autocomplete="off"
-                            class="form-control" autocorrect="off" required autofocus /> </div>
+                            class="form-control" autocorrect="off" required autofocus />
+                    </div>
                     <div class="form-group">
                         <label for="ReviewerEMail">Your E-Mail</label>
                         <input type="email" placeholder="Your E-Mail" id="ReviewerEMail" class="form-control"
-                            tabindex="2" autocomplete="off" autocorrect="off" title="Please Enter Your E-Mail" /> </div>
+                            tabindex="2" autocomplete="off" autocorrect="off" title="Please Enter Your E-Mail" />
+                    </div>
                     <div class="form-group">
                         <label for="ReviewerPhone">Phone Number</label>
                         <input type="tel" placeholder="Phone Number" id="ReviewerPhone" class="form-control"
@@ -41,36 +51,45 @@
                     <div class="form-group">
                         <label for="ContactsList">Contacts</label>
                         <input type="email" multiple name="cc" list="contacts" name="ContactsList"
-                            class="form-control" /> </div>
+                            class="form-control" />
+                    </div>
                     <div class="form-group">
                         <label for="searchField">Search</label>
-                        <input type="search" class="form-control" name="searchField" placeholder="search" /> </div>
+                        <input type="search" class="form-control" name="searchField" placeholder="search" />
+                    </div>
                     <div class="form-group">
                         <label for="numberex">Number</label>
-                        <input type="number" class="form-control" name="numberex" placeholder="number" /> </div>
+                        <input type="number" class="form-control" name="numberex" placeholder="number" />
+                    </div>
                     <div class="form-group">
                         <label for="zipcodeex">US Zip Code</label>
                         <input name="zipcodeex" class="form-control" placeholder="US Zip Code"
-                            pattern="(\d{5}([\-]\d{4})?)" /> </div>
+                            pattern="(\d{5}([\-]\d{4})?)" />
+                    </div>
                     <div class="form-group">
                         <label for="urlex">URL</label>
-                        <input type="url" class="form-control" name="urlex" placeholder="URL" /> </div>
+                        <input type="url" class="form-control" name="urlex" placeholder="URL" />
+                    </div>
                     <div class="form-group">
                         <label for="dateex">Date</label>
-                        <input type="date" class="form-control" name="dateex" placeholder="Date" /> </div>
+                        <input type="date" class="form-control" name="dateex" placeholder="Date" />
+                    </div>
                     <div class="form-group">
                         <label for="datetimeex">Date Time</label>
-                        <input type="datetime" class="form-control" name="datetimeex" placeholder="Date Time" /> </div>
+                        <input type="datetime" class="form-control" name="datetimeex" placeholder="Date Time" />
+                    </div>
                     <div class="form-group">
                         <label for="colorex">Color</label>
-                        <input type="color" class="form-control" name="colorex" placeholder="Color" /> </div>
+                        <input type="color" class="form-control" name="colorex" placeholder="Color" />
+                    </div>
                     <div class="form-group">
                         <label for="power">Power (range)</label>
                         <input type="range" min="-100" max="100" value="0" step="10" name="power" list="powers">
                     </div>
                     <div class="form-group">
                         <label for="f">Feeling:</label>
-                        <input name="f" type="text" class="form-control" /> </div>
+                        <input name="f" type="text" class="form-control" />
+                    </div>
                     <div class="form-group">
                         <label for="rangeex">Range</label>
                         <input type="range" class="form-control" name="rangeex" min="0" max="100" step="20" value="50">
@@ -78,7 +97,8 @@
                     <div class="form-group">
                         <label for="MovieReview">Review</label>
                         <textarea placeholder="Enter Your Review" class="form-control" tabindex="4" id="MovieReview"
-                            autocorrect="on" required spellcheck="true"></textarea> </div>
+                            autocorrect="on" required spellcheck="true"></textarea>
+                    </div>
                     <div class="form-group">
                         <label for="powersDD">Powers</label>
                         <datalist id="powersDD" class="form-control">
@@ -110,6 +130,7 @@
 
     </script>
 
-<script src="js/register.js"></script></body>
+    <script src="js/register.js"></script>
+</body>
 
 </html>

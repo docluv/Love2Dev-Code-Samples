@@ -30,54 +30,42 @@
 
             <main class="main-content flex-container">
                 <div class="z-depth-2 grey lighten-5 flex-container flex-absolute-center login-container">
-                    <div class="login-form">
-                        <header class="text-center">
-                            <h1>Camera Demo</h1>
-                        </header>
-                        <div class="loader1" hidden>
-                            <img src="images/newloader.gif" alt="CoreAuth" />
+                    <div class="face-recognition-mediaCapture ">
+                        <div class="row">
+                            <select id="videoSource"></select>
                         </div>
-                        <!-- <img id="profile-img" class="profile-img-card" src="img/avatar_2x.png" /> -->
-                        <div class="face-recognition-mediaCapture ">
-                            <div class="row">
-                                <select id="videoSource"></select>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <div class="video-source-wrapper">
-                                        <video id="player" class="faceid-camera" autoplay></video>
-                                    </div>
-                                    <div class="row-captured-face hide">
-                                        <canvas class="user-face"></canvas>
-                                    </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <div class="video-source-wrapper">
+                                    <video id="player" class="faceid-camera" autoplay></video>
+                                </div>
+                                <div class="row-captured-face hide">
+                                    <canvas class="user-face"></canvas>
                                 </div>
                             </div>
-                            <div class="row row-capture-btn hide">
-
-                                <button class="btn btn-capture waves-effect waves-light grey darken-3 right"
-                                    type="button" name="Capture">
-                                    Capture
-                                    <i class="fa fa-camera-retro"></i>
-                                </button>
-                            </div>
-                            <div class="row flex-container flex-around auth-providers"></div>
                         </div>
+                        <div class="row row-capture-btn hide">
+
+                            <button class="btn btn-capture waves-effect waves-light grey darken-3 right" type="button"
+                                name="Capture">
+                                Capture
+                                <i class="fa fa-camera-retro"></i>
+                            </button>
+                        </div>
+                        <div class="row flex-container flex-around auth-providers"></div>
                     </div>
-
                 </div>
-
             </main>
-
         </div>
     </div>
 
-
+    <script src="js/dollar-bill.js" type="application/javascript"></script>
     <script src="javascript/camera/camera.js" type="application/javascript"></script>
     <script>
 
 
     </script>
-    <script src="js/register.js"></script>
+
 </body>
 
 </html>
